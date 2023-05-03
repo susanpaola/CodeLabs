@@ -36,4 +36,27 @@ public class Centro {
 		
 	}
 	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public void setNombre(String nombre) {
+		
+	}
+	
+	public String getLocalizacion() {
+		return localizacion;
+	}
+	
+	public void setLocalizacion(String localizacion) {
+		
+	}
+	
+	public int getAttribute() {
+		return attribute;
+	}
+	
+	public void setAttribute(int attribute) {
+		
+	}
 }
