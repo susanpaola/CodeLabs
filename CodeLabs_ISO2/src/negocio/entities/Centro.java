@@ -10,4 +10,5 @@ public class Centro {
 	private String localizacion;
 	private int attribute;
 
+	
 }
