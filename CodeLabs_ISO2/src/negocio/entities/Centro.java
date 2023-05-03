@@ -12,11 +12,19 @@ public class Centro {
 	
 	public Centro(Collection<CursoPropio> cursoPropios, Collection<ProfesorUCLM> plantilla, String nombre,
 			String localizacion, int attribute) {
-		
+		super();
+		this.cursoPropios = cursoPropios;
+		this.plantilla = plantilla;
+		this.nombre = nombre;
+		this.localizacion = localizacion;
+		this.attribute = attribute;
 	}
 	
 	public Centro(String nombre, String localizacion, int attribute) {
-		
+		super();
+		this.nombre = nombre;
+		this.localizacion = localizacion;
+		this.attribute = attribute;
 	}
 	
 
@@ -25,7 +33,7 @@ public class Centro {
 	}
 	
 	public void setCursoPropios(Collection<CursoPropio> cursoPropios) {
-		
+		this.cursoPropios = cursoPropios;
 	}
 	
 	public Collection<ProfesorUCLM> getPlantilla(){
@@ -33,7 +41,7 @@ public class Centro {
 	}
 	
 	public void setPlantilla(Collection<ProfesorUCLM> plantilla) {
-		
+		this.plantilla = plantilla;
 	}
 	
 	public String getNombre() {
@@ -41,7 +49,7 @@ public class Centro {
 	}
 	
 	public void setNombre(String nombre) {
-		
+		this.nombre = nombre;
 	}
 	
 	public String getLocalizacion() {
@@ -49,7 +57,7 @@ public class Centro {
 	}
 	
 	public void setLocalizacion(String localizacion) {
-		
+		this.localizacion = localizacion;
 	}
 	
 	public int getAttribute() {
@@ -57,6 +65,6 @@ public class Centro {
 	}
 	
 	public void setAttribute(int attribute) {
-		
+		this.attribute = attribute;
 	}
 }
