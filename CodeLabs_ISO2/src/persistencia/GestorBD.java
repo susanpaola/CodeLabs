@@ -53,4 +53,10 @@ public class GestorBD {
 		throw new UnsupportedOperationException();
 	}
 
+	public GestorBD getAgente() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }
