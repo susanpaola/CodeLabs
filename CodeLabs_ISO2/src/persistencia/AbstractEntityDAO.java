@@ -11,7 +11,8 @@ public abstract class AbstractEntityDAO<E> {
 	private Class<E> entityClass;
 	
 	public AbstractEntityDAO(Class<E> entityClass) {
-		
+		super();
+		this.entityClass = entityClass;
 	}
 
 	/**
