@@ -10,8 +10,21 @@ public class Matricula {
 	private static ModoPago tipoPago;
 	private String fecha;
 	private boolean pagado;
-	private int attributo;
+	private int atributo;
 	
+	public Matricula(int idMatricula, String fecha, boolean pagado, int atributo, ModoPago tipoPago, int idTitulo, String idEstudiante) {
+		this.idEstudiante = idEstudiante;
+		this.idTitulo = idTitulo;
+		this.tipoPago = tipoPago;
+		this.fecha = fecha;
+		this.pagado = pagado;
+		this.idMatricula = idMatricula;
+		this.atributo = atributo;
+	}
+
+	public Matricula() {
+		
+	}
 	
 	public int getIdMatricula() {
 		return idMatricula;
@@ -51,10 +64,10 @@ public class Matricula {
 		this.pagado = pagado;
 	}
 	public int getAttributo() {
-		return attributo;
+		return atributo;
 	}
 	public void setAttributo(int attributo) {
-		this.attributo = attributo;
+		this.atributo = attributo;
 	}
 
 	
