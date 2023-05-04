@@ -56,5 +56,29 @@ public class Materia {
 		this.fechaFin = fechaFin;
 	}
 	
+	public Materia(Profesor responsable, String nombre, double horas, 
+			String fechaInicio, String fechaFin, int curso) {
+		super();
+		this.fechaInicio = fechaInicio;
+		this.fechaFin = fechaFin;
+		this.curso = curso;
+		this.responsable = responsable;
+		this.nombre = nombre;
+		this.horas = horas;
+		
+	}
+	
+	public Materia(String responsable, String nombre, int horas, String of1, 
+			String of2, int curso) {
+		
+		super();
+		this.responsable2 = responsable;
+		this.nombre = nombre;
+		this.horas = horas;
+		this.fechaInicio = of1;
+		this.fechaFin = of2;
+		this.curso = curso;
+	}
+	
 
 }
