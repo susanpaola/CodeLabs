@@ -11,7 +11,7 @@ public class Estudiante {
 	private String titulacion;
 	private String cualificacion;
 	
-	public Estudiante(String dni, String apellidos, String titulacion, String cualificacion,
+	public Estudiante(String dni, String nombre, String apellidos, String titulacion, String cualificacion,
 			Collection<Matricula> matriculas){
 		super();
 		this.dni = dni;
@@ -21,8 +21,17 @@ public class Estudiante {
 		this.cualificacion = cualificacion;
 		this.matriculas = matriculas;
 		
-			}
+	}
 	
+	public Estudiante(String dni, String nombre, String apellidos, String titulacion, String cualificacion){
+		super();
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.titulacion = titulacion;
+		this.cualificacion = cualificacion;
+		
+	}
 	
 	public Collection<Matricula> getMatriculas() {
 		return matriculas;
