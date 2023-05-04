@@ -3,6 +3,7 @@ package negocio.entities;
 import java.util.*;
 import persistencia.*;
 
+
 public class CursoPropio {
 
 	private Collection<Matricula> matriculas;

@@ -7,4 +7,5 @@ public enum EstadoCurso {
 	EN_MATRICULACION,
 	EN_IMPARTIZICION,
 	TERMINADO
+	
 }
