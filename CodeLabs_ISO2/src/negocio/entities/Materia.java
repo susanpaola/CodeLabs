@@ -12,7 +12,6 @@ public class Materia {
 	private int curso;
 	Profesor responsable;
 	
-	
 	public String getResponsable2() {
 		return responsable2;
 	}
