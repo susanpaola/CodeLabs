@@ -4,12 +4,27 @@ package negocio.entities;
 
 public class Materia {
 
-	Profesor responsable;
+	String responsable2;
 	private String nombre;
 	private double horas;
 	private String fechaInicio;
 	private String fechaFin;
+	private int curso;
+	Profesor responsable;
 	
+	
+	public String getResponsable2() {
+		return responsable2;
+	}
+	public void setResponsable2(String responsable2) {
+		this.responsable2 = responsable2;
+	}
+	public int getCurso() {
+		return curso;
+	}
+	public void setCurso(int curso) {
+		this.curso = curso;
+	}
 	
 	public Profesor getResponsable() {
 		return responsable;
