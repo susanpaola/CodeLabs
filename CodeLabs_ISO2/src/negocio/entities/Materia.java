@@ -1,6 +1,6 @@
 package negocio.entities;
 
-import java.util.Date;
+//import java.util.Date;
 
 public class Materia {
 
@@ -9,6 +9,7 @@ public class Materia {
 	private double horas;
 	private String fechaInicio;
 	private String fechaFin;
+	
 	
 	public Profesor getResponsable() {
 		return responsable;
