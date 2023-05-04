@@ -31,11 +31,12 @@ public class Matricula {
 	public void setIdEstudiante(String idEstudiante) {
 		this.idEstudiante = idEstudiante;
 	}
-	public static ModoPago getTipoPago() {
+	public ModoPago getTipoPago() {
 		return tipoPago;
 	}
-	public static void setTipoPago(ModoPago tipoPago) {
-		Matricula.tipoPago = tipoPago;
+	public void setTipoPago(ModoPago tipoPago) {
+		//Matricula.tipoPago = tipoPago;
+		this.tipoPago = tipoPago;
 	}
 	public String getFecha() {
 		return fecha;
