@@ -20,6 +20,9 @@ public class CursoPropioDAO{
 	public int eliminarCurso(String sql) throws SQLException, Exception {
 		return agenteBD.delete(sql);
 	}
+	public int actualizar(String sql) {
+		return agenteBD.insert(sql);
+	}
 
 
 }
