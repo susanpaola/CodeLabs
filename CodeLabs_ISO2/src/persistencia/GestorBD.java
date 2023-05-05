@@ -1,5 +1,7 @@
 package persistencia;
 
+import java.util.Vector;
+
 public class GestorBD {
 
 	public GestorBD conectarBD() {
@@ -15,8 +17,9 @@ public class GestorBD {
 	/**
 	 * 
 	 * @param sql
+	 * @return 
 	 */
-	public void select(String sql) {
+	public Vector<Object> select(String sql) {
 		// TODO - implement GestorBD.select
 		throw new UnsupportedOperationException();
 	}
