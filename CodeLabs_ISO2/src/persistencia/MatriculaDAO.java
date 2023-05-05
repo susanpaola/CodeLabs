@@ -10,5 +10,12 @@ public class MatriculaDAO {
 			System.out.println(e);
 		}
 	}
+	public int insertMatricula(String sql) {
+		return agenteBD.insert(sql);
+	}
+	
+	public int deleteMatricula(String sql) {
+		return agenteBD.delete(sql);
+	}
 
 }
