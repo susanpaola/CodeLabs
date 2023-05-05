@@ -1,5 +1,7 @@
 package persistencia;
 
+import java.sql.SQLException;
+
 public class MatriculaDAO {
 	private GestorBD agenteBD;
 
