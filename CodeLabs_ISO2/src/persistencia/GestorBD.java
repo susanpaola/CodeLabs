@@ -14,6 +14,10 @@ public class GestorBD {
 			System.out.println(e);
 		}
 	}
+	
+	public static void disconnect() throws Exception {
+		mBD.close();
+	}
 
 	public GestorBD conectarBD() {
 		// TODO - implement GestorBD.conectarBD
