@@ -1,6 +1,7 @@
 package persistencia;
 
 import java.sql.SQLException;
+import java.util.Vector;
 
 public class MatriculaDAO {
 	private GestorBD agenteBD;
