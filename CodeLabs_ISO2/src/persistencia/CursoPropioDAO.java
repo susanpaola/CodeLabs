@@ -34,6 +34,9 @@ public class CursoPropioDAO{
 		return agenteBD.update(sql);
 	}
 	
-	
+	//seleccionar curso
+	public Vector<Object> seleccionarCursos(String sql) throws Exception {
+		return agenteBD.select(sql);
+	}
 
 }
