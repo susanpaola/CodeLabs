@@ -17,10 +17,16 @@ public class CursoPropioDAO{
 			System.out.println(e);
 		}
 	}
+	
 	public int eliminarCurso(String sql) throws SQLException, Exception {
 		return agenteBD.delete(sql);
 	}
+	
 	public int actualizar(String sql) {
+		return agenteBD.insert(sql);
+	}
+	
+	public int insertarCurso(String sql) {
 		return agenteBD.insert(sql);
 	}
 
