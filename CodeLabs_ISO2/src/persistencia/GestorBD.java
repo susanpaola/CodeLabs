@@ -1,8 +1,19 @@
 package persistencia;
 
+import java.sql.DriverManager;
 import java.util.Vector;
 
 public class GestorBD {
+	
+	public static void connect() {
+		try {
+			Class.forName(driver);
+			mBD = DriverManager.getConnection(url, user, password);
+			mBD.setAutoCommit(true);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 
 	public GestorBD conectarBD() {
 		// TODO - implement GestorBD.conectarBD
