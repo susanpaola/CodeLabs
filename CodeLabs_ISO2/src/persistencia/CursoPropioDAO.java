@@ -16,6 +16,9 @@ public class CursoPropioDAO{
 			System.out.println(e);
 		}
 	}
+	public int eliminarCurso(String sql) throws SQLException, Exception {
+		return agenteBD.delete(sql);
+	}
 
 
 }
