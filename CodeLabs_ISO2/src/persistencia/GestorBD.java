@@ -5,6 +5,11 @@ import java.util.Vector;
 
 public class GestorBD {
 	
+	// Driven para conectar con bases de datos MySQL
+	private static String driver= "com.mysql.cj.jdbc.Driver";
+	private static String user= "proyecto_iso";
+	private static String password="contrase\u00f1a";
+	
 	public GestorBD() throws Exception {
 		connect();
 	}
