@@ -18,35 +18,56 @@ public class GestorBD {
 	public static void disconnect() throws Exception {
 		mBD.close();
 	}
-
-	public GestorBD conectarBD() {
-		// TODO - implement GestorBD.conectarBD
-		throw new UnsupportedOperationException();
-	}
-
-	public void desconectarBD() {
-		// TODO - implement GestorBD.desconectarBD
-		throw new UnsupportedOperationException();
+	
+	/**
+	 * Metodo insertar
+	 * @param sql
+	 */
+	public  int insert(String SQL) {
+		int res = -1;
+		try {
+			connect();
+			PreparedStatement stmt = mBD.prepareStatement(SQL);
+			res = stmt.executeUpdate(SQL);
+			stmt.close();
+			disconnect();
+		} catch (Exception e) {
+			System.out.println(e);
+		} 
+		return res;
 	}
 
 	/**
-	 * 
+	 * Metodo seleccionar
 	 * @param sql
 	 * @return 
 	 */
-	public Vector<Object> select(String sql) {
-		// TODO - implement GestorBD.select
-		throw new UnsupportedOperationException();
+	public Vector<Object>  select(String SQL) throws Exception {
+		
+		Vector<Object> vectoradevolver = new Vector<Object>();
+		connect();
+		Statement stmt = mBD.createStatement();
+		ResultSet res = stmt.executeQuery(SQL);
+		ResultSetMetaData rsmd = res.getMetaData();
+		int columns = rsmd.getColumnCount();
+	
+		while (res.next()) {
+			Vector<Object> v = new Vector<Object>();
+			for(int i=1; i<=columns; i++) {
+				try {
+					v.add(res.getObject(i));
+				}
+				catch(SQLException ex) {
+					continue;
+				}
+			}
+			vectoradevolver.add(v);
+		}
+		stmt.close();
+		disconnect();
+		return vectoradevolver;
 	}
-
-	/**
-	 * 
-	 * @param sql
-	 */
-	public int insert(String sql) {
-		// TODO - implement GestorBD.insert
-		throw new UnsupportedOperationException();
-	}
+	
 
 	/**
 	 * 
