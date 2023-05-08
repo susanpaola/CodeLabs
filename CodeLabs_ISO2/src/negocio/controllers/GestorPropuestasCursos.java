@@ -1,5 +1,7 @@
 package negocio.controllers;
 
+import java.util.Vector;
+
 import negocio.entities.*;
 import persistencia.CursoPropioDAO;
 
@@ -46,8 +48,45 @@ public class GestorPropuestasCursos {
 	 * @param curso
 	 */
 	public EstadoCurso evaluarPropuesta(CursoPropio curso) {
-		// TODO - implement GestorPropuestasCursos.evaluarPropuesta
-		throw new UnsupportedOperationException();
+		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
+		Vector<Object> res = null;
+		try {
+			String sql = "SELECT estado FROM CursoPropio WHERE id=" + curso.getId();
+			res = agenteCursoPropioDAO.seleccionarCursos(sql);
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		String estado = res.get(0).toString();
+		String charsToRemove = "[]";
+			 
+	        for (char c : charsToRemove.toCharArray()) {
+	            estado = estado.replace(String.valueOf(c), "");
+		}
+		
+		EstadoCurso ec = null;
+		switch(estado) {
+			case "PROPUESTO":
+				ec = EstadoCurso.PROPUESTO;
+				break;
+			case "VALIDADO":
+				ec = EstadoCurso.VALIDADO;
+				break;
+			case "PROPUESTA_RECHAZADA":
+				ec = EstadoCurso.PROPUESTA_RECHAZADA;
+				break;
+			case "EN_MATRICULACION":
+				ec = EstadoCurso.EN_MATRICULACION;
+				break;
+			case "EN_IMPARTIZICION":
+				ec = EstadoCurso.EN_IMPARTIZICION;
+				break;
+			case "TERMINADO":
+				ec = EstadoCurso.TERMINADO;
+				break;
+		}
+		return ec;
 	}
 
 	/**
