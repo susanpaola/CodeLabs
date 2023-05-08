@@ -94,8 +94,15 @@ public class GestorPropuestasCursos {
 	 * @param curso
 	 */
 	public void altaCursoAprobado(CursoPropio curso) {
-		// TODO - implement GestorPropuestasCursos.altaCursoAprobado
-		throw new UnsupportedOperationException();
+		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
+		
+		try {
+			String sql = "UPDATE CursoPropio SET estado='" + curso.getEstadoCurso().toString() + "' WHERE id=" + curso.getId();
+			agenteCursoPropioDAO.editarCurso(sql);
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 
 }
