@@ -9,6 +9,7 @@ public class GestorBD {
 	private static String driver= "com.mysql.cj.jdbc.Driver";
 	private static String user= "proyecto_iso";
 	private static String password="contrase\u00f1a";
+	private static String url = "jdbc:mysql://db4free.net:3306/proyecto_iso";
 	
 	public GestorBD() throws Exception {
 		connect();
