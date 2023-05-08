@@ -5,6 +5,10 @@ import java.util.Vector;
 
 public class GestorBD {
 	
+	public GestorBD() throws Exception {
+		connect();
+	}
+	
 	public static void connect() {
 		try {
 			Class.forName(driver);
