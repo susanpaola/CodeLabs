@@ -70,21 +70,34 @@ public class GestorBD {
 	
 
 	/**
-	 * 
+	 * Metodo actualizar
 	 * @param sql
 	 */
-	public int update(String sql) {
-		// TODO - implement GestorBD.update
-		throw new UnsupportedOperationException();
+	public int update(String SQL) throws SQLException, Exception {
+		connect();
+		PreparedStatement stmt = mBD.prepareStatement(SQL);
+		int res = stmt.executeUpdate(SQL);
+		stmt.close();
+		disconnect();
+		return res;
 	}
 
 	/**
-	 * 
+	 * Metodo eliminar
 	 * @param sql
 	 */
-	public int delete(String sql) {
-		// TODO - implement GestorBD.delete
-		throw new UnsupportedOperationException();
+	public int delete(String SQL) {
+		int res = -1;
+		try {
+			connect();
+			PreparedStatement stmt = mBD.prepareStatement(SQL);
+			res = stmt.executeUpdate(SQL);
+			stmt.close();
+			disconnect();
+		} catch (Exception e) {
+			System.out.println(e);
+		} 
+		return res;
 	}
 
 	public void operation() {
