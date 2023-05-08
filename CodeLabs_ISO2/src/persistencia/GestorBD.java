@@ -1,6 +1,6 @@
 package persistencia;
 
-import java.sql.DriverManager;
+import java.sql.*;
 import java.util.Vector;
 
 public class GestorBD {
