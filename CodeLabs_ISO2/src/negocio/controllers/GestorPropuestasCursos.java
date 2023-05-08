@@ -1,12 +1,20 @@
 package negocio.controllers;
 
 import negocio.entities.*;
+import persistencia.CursoPropioDAO;
 
 public class GestorPropuestasCursos {
 
-	public CursoPropio realizarPropuestaCurso() {
-		// TODO - implement GestorPropuestasCursos.realizarPropuestaCurso
-		throw new UnsupportedOperationException();
+	public void realizarPropuestaCurso(CursoPropio curso) {
+		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
+		
+		try {
+			String sql = "INSERT INTO CursoPropio VALUES (" + curso.getId() + ",'" + curso.getNombre() + "'," + curso.getECTS() + ",'" + curso.getFechaInicio() + "','" + curso.getFechaFin() + "'," + curso.getTasaMatricula() + "," + curso.getEdicion() + ",'" + curso.getCentro() + "','" + curso.getDirector() + "','" + curso.getSecretario() + "','" + curso.getEstadoCurso().toString() + "','" + curso.getTipoCurso().toString() + "')";
+			agenteCursoPropioDAO.insertarCurso(sql);
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 
 	/**
