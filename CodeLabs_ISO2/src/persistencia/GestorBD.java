@@ -11,6 +11,12 @@ public class GestorBD {
 	private static String password="contrase\u00f1a";
 	private static String url = "jdbc:mysql://db4free.net:3306/proyecto_iso";
 	
+	//Instancia 
+	protected static GestorBD mInstancia = null;
+	
+	// Conexion con la base de datos
+	protected static Connection mBD;
+	
 	public GestorBD() throws Exception {
 		connect();
 	}
