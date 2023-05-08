@@ -105,10 +105,10 @@ public class GestorBD {
 		throw new UnsupportedOperationException();
 	}
 
-	public GestorBD getAgente() {
-		// TODO Auto-generated method stub
-		return null;
+	public static GestorBD getAgente() throws Exception {
+		if (mInstancia == null) {
+			mInstancia = new GestorBD();
+		}
+		return mInstancia;
 	}
-
-
 }
