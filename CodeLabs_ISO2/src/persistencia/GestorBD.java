@@ -116,11 +116,6 @@ public class GestorBD {
 		return res;
 	}
 
-	public void operation() {
-		// TODO - implement GestorBD.operation
-		throw new UnsupportedOperationException();
-	}
-
 	public static GestorBD getAgente() throws Exception {
 		if (mInstancia == null) {
 			mInstancia = new GestorBD();
