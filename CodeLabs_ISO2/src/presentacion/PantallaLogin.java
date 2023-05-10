@@ -12,4 +12,9 @@ public class PantallaLogin {
 		throw new UnsupportedOperationException();
 	}
 
+	public void mostrar() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

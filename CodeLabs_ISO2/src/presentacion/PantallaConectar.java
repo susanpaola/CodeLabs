@@ -1,15 +1,28 @@
 package presentacion;
 
-import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.SystemColor;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+//import com.jgoodies.forms.factories.DefaultComponentFactory;
+
+import persistencia.CursoPropioDAO;
+import persistencia.GestorBD;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.UIManager;
+import java.awt.SystemColor;
+import java.awt.Cursor;
 
 public class PantallaConectar extends JFrame {
 
@@ -50,7 +63,21 @@ public class PantallaConectar extends JFrame {
 		conectBtn.setFont(new Font("Tahoma", Font.BOLD, 18));
 		conectBtn.setBackground(SystemColor.textHighlight);
 		conectBtn.setBounds(141, 172, 274, 113);
+		
+		
 		contentPane.add(conectBtn);
+		conectBtn.addActionListener((ActionListener) new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					GestorBD.connect();
+					presentacion.PantallaLogin p = new presentacion.PantallaLogin();
+					p.mostrar();
+					setVisible(false);
+				}catch (Exception ea) {
+				JOptionPane.showMessageDialog(null, "Error al conectar con la base de datos. Revise sus datos de conexión", "ERROR", JOptionPane.ERROR_MESSAGE);
+				return;
+				}
+			}
+		});
 	}
-
 }
