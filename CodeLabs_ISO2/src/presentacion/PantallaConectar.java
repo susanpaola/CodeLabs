@@ -52,20 +52,25 @@ public class PantallaConectar extends JFrame {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setBackground(Color.WHITE);
+		contentPane.setBackground(new Color(240, 248, 255));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton conectBtn = new JButton("ENTRAR");
+		JButton conectBtn = new JButton("CREAR CONEXION");
 		conectBtn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		conectBtn.setForeground(Color.WHITE);
+		conectBtn.setForeground(new Color(139, 0, 0));
 		conectBtn.setFont(new Font("Tahoma", Font.BOLD, 18));
-		conectBtn.setBackground(SystemColor.textHighlight);
-		conectBtn.setBounds(141, 172, 274, 113);
+		conectBtn.setBackground(new Color(255, 255, 255));
+		conectBtn.setBounds(83, 85, 274, 113);
 		
 		
 		contentPane.add(conectBtn);
+		
+		JLabel lblNewLabel = new JLabel("Conexion a la Base de Datos de la UCLM");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel.setBounds(10, 11, 401, 28);
+		contentPane.add(lblNewLabel);
 		conectBtn.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
