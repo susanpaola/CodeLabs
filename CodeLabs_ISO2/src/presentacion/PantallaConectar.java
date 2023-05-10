@@ -12,8 +12,6 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-//import com.jgoodies.forms.factories.DefaultComponentFactory;
-
 import persistencia.CursoPropioDAO;
 import persistencia.GestorBD;
 
@@ -27,7 +25,6 @@ import java.awt.Cursor;
 public class PantallaConectar extends JFrame {
 
 	private JPanel contentPane;
-
 	/**
 	 * Launch the application.
 	 */
@@ -52,7 +49,7 @@ public class PantallaConectar extends JFrame {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setBackground(new Color(240, 248, 255));
+		contentPane.setBackground(new Color(176, 224, 230));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
