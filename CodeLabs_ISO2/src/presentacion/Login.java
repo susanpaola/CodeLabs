@@ -77,4 +77,8 @@ public class Login extends JFrame implements ActionListener{
 		}
 		
 	}
+	public void mostrar() {
+		// TODO Auto-generated method stub
+		
+	}
 }

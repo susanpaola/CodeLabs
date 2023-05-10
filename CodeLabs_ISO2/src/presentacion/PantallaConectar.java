@@ -68,11 +68,12 @@ public class PantallaConectar extends JFrame {
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel.setBounds(10, 11, 401, 28);
 		contentPane.add(lblNewLabel);
+		
 		conectBtn.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					GestorBD.connect();
-					presentacion.PantallaLogin p = new presentacion.PantallaLogin();
+					presentacion.Login p = new presentacion.Login();
 					p.mostrar();
 					setVisible(false);
 				}catch (Exception ea) {
