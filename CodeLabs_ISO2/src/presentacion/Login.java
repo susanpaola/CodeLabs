@@ -1,80 +1,307 @@
 package presentacion;
 
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Vector;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-import javax.swing.border.EmptyBorder;
 import java.awt.Font;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Label;
+import javax.swing.DropMode;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.JEditorPane;
+//import com.jgoodies.forms.factories.DefaultComponentFactory;
+
+import persistencia.GestorBD;
+
+import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
+import java.awt.Panel;
+import java.awt.BorderLayout;
+import javax.swing.UIManager;
+import java.awt.Canvas;
+import java.awt.Toolkit;
 
-public class Login extends JFrame implements ActionListener{
-
-	//private JPanel contentPane;
-	private JButton loginButton = new JButton("Login");
+public class Login  {
 	public static void main(String[] args) {
-		Login frame = new Login ();
-		frame.setVisible(true);
-	}
-	public Login() {
-		inicializacion();
-	}
-
-	public void inicializacion() {
-		setTitle("Interfaz de login");
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		setBounds(100, 100, 717, 417);
-		JPanel contentPane = new JPanel();
-		contentPane.setBackground(new Color(176, 224, 230));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JTextField usuarioField = new JTextField();
-		usuarioField.setBounds(153, 119, 379, 34);
-		contentPane.add(usuarioField);
-		usuarioField.setColumns(10);
-		
-		JTextField passField = new JTextField();
-		passField.setColumns(10);
-		passField.setBounds(153, 216, 379, 34);
-		contentPane.add(passField);
-		
-		JLabel lblUsuario = new JLabel("Usuario:");
-		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblUsuario.setBounds(153, 78, 68, 30);
-		contentPane.add(lblUsuario);
-		
-		JLabel lblContrasenia = new JLabel("Contraseña:");
-		lblContrasenia.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblContrasenia.setBounds(151, 181, 108, 24);
-		contentPane.add(lblContrasenia);
-		
-		this.loginButton.addActionListener(this);
-		this.loginButton.setBounds(268, 310, 170, 43);
-		getContentPane().add(loginButton);
-		
-		JLabel lblNewLabel = new JLabel("Login ");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 27));
-		lblNewLabel.setBounds(252, 11, 201, 34);
-		contentPane.add(lblNewLabel);
 		
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource()== loginButton) {
-			PantallaPrincipal frame = new PantallaPrincipal ();
-			frame.setVisible(true);
+	protected static JTextField UsuarioText;
+	protected static JTextField ContrasenaText;
+	protected static JTextField user;
+	
+
+	private static void placeComponents(JPanel panel) {
+	
+		panel.setLayout(null);
+	}
+
+		/**
+		 * @wbp.parser.entryPoint
+		 */
+		public static void mostrar() {
+			JFrame frmUclm = new JFrame("Demo application");
+			frmUclm.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\Documents\\3º 22-23\\1º CUATRI\\ISO 2\\ProyectoISO\\logoUCLM.jpg"));
+			frmUclm.setTitle("UCLM");
+			frmUclm.setSize(843, 582);
+			frmUclm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+			JPanel panel = new JPanel();
+			panel.setBackground(new Color(176, 224, 230));
+			frmUclm.getContentPane().add(panel);
+			placeComponents(panel);
+			
+			JButton loginButton = new JButton("Iniciar sesion");
+			loginButton.setBounds(320, 434, 168, 48);
+			loginButton.hide();
+			panel.setLayout(null);
+			loginButton.setForeground(new Color(0, 0, 0));
+			loginButton.setBackground(SystemColor.textHighlight);
+			loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			loginButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+			panel.add(loginButton);
+			
+			JPasswordField ContrasenaText = new JPasswordField(20);
+			ContrasenaText.setBounds(207, 267, 434, 30);
+			ContrasenaText.setToolTipText("Introduzca su contrasena");
+			ContrasenaText.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			ContrasenaText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) SystemColor.textHighlight));
+			
+			ContrasenaText.setActionCommand("");
+			ContrasenaText.hide();
+			panel.add(ContrasenaText);
+			
+			UsuarioText = new JTextField();
+			UsuarioText.setBounds(207, 175, 434, 42);
+			UsuarioText.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			UsuarioText.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(180, 180, 180)));
+			UsuarioText.setName("");
+			UsuarioText.setToolTipText("Introduzca su correo electronico");
+			panel.add(UsuarioText);
+			UsuarioText.setColumns(10);	
+			
+		
+			//JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("");
+			//lblNewJgoodiesLabel.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\ImagenUCLM.png"));
+			//lblNewJgoodiesLabel.setBounds(44, 10, 310, 99);
+			//panel.add(lblNewJgoodiesLabel);
+			
+			JButton btnRecuperar = new JButton("He olvidado mi contrasena");
+			btnRecuperar.setBounds(207, 308, 168, 21);
+			btnRecuperar.hide();
+			btnRecuperar.setHorizontalAlignment(SwingConstants.LEFT);
+			btnRecuperar.setForeground(SystemColor.textHighlight);
+			btnRecuperar.setFont(new Font("Tahoma", Font.BOLD, 12));
+			btnRecuperar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnRecuperar.setBackground(new Color(176, 224, 230));
+			btnRecuperar.setBorder(null);
+			panel.add(btnRecuperar);
+
+			frmUclm.setVisible(true);
+			JButton btnSiguiente = new JButton("Siguiente");
+			btnSiguiente.setBounds(651, 486, 168, 48);
+			btnSiguiente.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnSiguiente.setForeground(new Color(0, 0, 0));
+			btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 15));
+			btnSiguiente.setBackground(SystemColor.textHighlight);
+			panel.add(btnSiguiente);
+			
+			JLabel userLabel = new JLabel("Iniciar sesion");
+			userLabel.setBounds(255, 11, 312, 66);
+			userLabel.setHorizontalAlignment(SwingConstants.CENTER);
+			userLabel.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+			userLabel.setFont(new Font("Tahoma", Font.BOLD, 27));
+			panel.add(userLabel);
+
+			JLabel passwordLabel = new JLabel("Contrasena:");
+			passwordLabel.setBounds(203, 214, 215, 42);
+			passwordLabel.hide();
+			passwordLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+			panel.add(passwordLabel);
+			
+			user = new JTextField();
+			user.setBounds(207, 372, 434, 30);
+			user.setFont(new Font("Tahoma", Font.BOLD, 10));
+			user.setBackground(Color.WHITE);
+			user.setBorder(null);
+			user.setEditable(false);
+			user.hide();
+			panel.add(user);
+			user.setColumns(10);
+			
+			JButton btnNoAcceder = new JButton("No puede acceder a su cuenta?");
+			btnNoAcceder.setBounds(202, 340, 216, 21);
+			btnNoAcceder.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnNoAcceder.setHorizontalAlignment(SwingConstants.LEFT);
+			btnNoAcceder.setForeground(SystemColor.textHighlight);
+			btnNoAcceder.setFont(new Font("Tahoma", Font.BOLD, 12));
+			btnNoAcceder.setBorder(null);
+			btnNoAcceder.setBackground(new Color(176, 224, 230));
+			panel.add(btnNoAcceder);
+			
+			JButton btnNewButton = new JButton("Volver");
+			btnNewButton.setBounds(705, 11, 114, 49);
+			btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnNewButton.setForeground(new Color(0, 0, 0));
+			btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+			btnNewButton.setBackground(SystemColor.textHighlight);
+			panel.add(btnNewButton);
+			
+			JLabel lblUsuario = new JLabel("Usuario:");
+			lblUsuario.setBounds(207, 129, 215, 42);
+			lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 20));
+			panel.add(lblUsuario);
+			btnNewButton.hide();
+			btnNewButton.addActionListener((ActionListener) new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+						presentacion.PantallaLogin p = new presentacion.PantallaLogin();
+						p.mostrar();
+						
+						frmUclm.dispose();
+						
+					}
+			});
+			
+			
+
+			
+
+			btnSiguiente.addActionListener((ActionListener) new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String usu=UsuarioText.getText();
+			if (usu.length()==0) {
+				JOptionPane.showMessageDialog(null, "Debe introducir su usuario.", "ERROR", JOptionPane.ERROR_MESSAGE);
+			}
+			else {
+				btnRecuperar.show();
+				btnSiguiente.hide();
+				UsuarioText.hide();
+				ContrasenaText.show();
+				loginButton.show();
+				userLabel.hide();
+				passwordLabel.show();
+				btnNoAcceder.hide();
+				btnNewButton.show();
+				user.show();
+				user.setText(" Usuario: "+ UsuarioText.getText());	
+				
+				loginButton.addActionListener((ActionListener) new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String pass =ContrasenaText.getText();
+						if (pass.length()==0) {
+							JOptionPane.showMessageDialog(null, "Debe introducir su contraseña.", "ERROR", JOptionPane.ERROR_MESSAGE);
+						}
+						else {
+									 try {
+										 GestorBD.connect();
+										 String user= "SELECT usuario FROM Usuarios WHERE usuario = '"+usu+"'";
+										 Vector<Object> usuario,contra;
+										usuario = GestorBD.getAgente().select(user);
+										
+										 String passw= "SELECT contraseña FROM Usuarios WHERE contraseña = '"+pass+"'";
+										 contra = GestorBD.getAgente().select(passw);
+										 
+										 if (usuario.isEmpty()==false && contra.isEmpty()==false) {
+											 JOptionPane.showMessageDialog(null, "Bienvenido.", "UCLM", JOptionPane.INFORMATION_MESSAGE);
+											 tipoPerfil(devolverTipo(UsuarioText.getText()),devolverNombre(UsuarioText.getText()));
+											 frmUclm.dispose();
+											 presentacion.PantallaRealizarPropuesta pa = new presentacion.PantallaRealizarPropuesta();
+											 //pa.NombreProf.setText(devolverNombre(UsuarioText.getText()));
+											 //pa.CategoriaProf.setText(devolverTipo(UsuarioText.getText()));
+										 }
+										 else {
+											 JOptionPane.showMessageDialog(null, "El usuario o la contrasena son incorrectos. Por favor, introduzca correctamente los datos.", "ERROR", JOptionPane.ERROR_MESSAGE);
+											 frmUclm.dispose();
+											 Login.mostrar();
+											
+											
+										 }
+										 
+									} catch (Exception e1) {
+										// TODO Auto-generated catch block
+										e1.printStackTrace();
+									}
+									
+						}
+					}
+					});
+		
+				}
+				}
+			});
+		
 		}
-		
-	}
+		public static String devolverNombre(String usu) {
+			String nombre;
+			String name= "SELECT nombre FROM Usuarios WHERE usuario = '"+usu+"'";
+			String ape= "SELECT apellidos FROM Usuarios WHERE usuario = '"+usu+"'";
+			 Vector<Object> nom,apellidos;
+			try {
+				nom = GestorBD.getAgente().select(name);
+				apellidos=GestorBD.getAgente().select(ape);
+				nombre=(nom.get(0).toString().replace("[", "").replace("]", "")+" "+apellidos.get(0).toString().replace("[", "").replace("]", ""));
+				return nombre;
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+			return "";
+}
+		public static String devolverTipo(String usu) {
+			String tipo;
+			String sql= "SELECT tipoUsuario FROM Usuarios WHERE usuario = '"+usu+"'";
+			 Vector<Object> nom;
+			try {
+				nom = GestorBD.getAgente().select(sql);
+				tipo=(nom.get(0).toString().replace("[", "").replace("]", ""));
+				
+				return tipo;
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			return "";
+}
+		public static void tipoPerfil(String a, String nom) throws Exception {	
+			switch (a) { 
+		    case "Profesor":
+		    	presentacion.PantallaDireccionCursos p = new presentacion.PantallaDireccionCursos();
+		    	//p.NombreUsu.setText(nom);
+				//p.TipoUsuario.setText(a);
+		    	//p.setVisible(true);
+		    	
+		     break;
+		    case "Estudiante":
+		    	presentacion.PantallaEstudiante e = new presentacion.PantallaEstudiante();
+		    	//e.NombreUsu.setText(nom);
+				//e.TipoUsuario.setText(a);
+		    	e.setVisible(true);
+		     break;
+		    case "Vicerrector" :
+		    	presentacion.PantallaEmpleadosVicerrectorado v = new presentacion.PantallaEmpleadosVicerrectorado();
+		    	//v.NombreUsu.setText(nom);
+				//v.TipoUsuario.setText(a);
+		    	//v.setVisible(true);
+		     break;
+		}
+		}
 }
