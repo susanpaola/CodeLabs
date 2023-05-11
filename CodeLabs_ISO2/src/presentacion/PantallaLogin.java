@@ -82,7 +82,7 @@ public class PantallaLogin  {
 			panel.add(loginButton);
 			
 			JPasswordField ContrasenaText = new JPasswordField(20);
-			ContrasenaText.setBackground(new Color(192, 192, 192));
+			ContrasenaText.setBackground(new Color(255, 255, 255));
 			ContrasenaText.setToolTipText("Introduzca su contrase\u00F1a");
 			ContrasenaText.setFont(new Font("Tahoma", Font.PLAIN, 15));
 			ContrasenaText.setBorder(new MatteBorder(0, 0, 1, 0, (Color) SystemColor.textHighlight));
@@ -97,7 +97,7 @@ public class PantallaLogin  {
 			UsuarioText.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(180, 180, 180)));
 			UsuarioText.setName("");
 			UsuarioText.setToolTipText("Introduzca su correo electr\u00F3nico");
-			UsuarioText.setBounds(79, 114, 434, 42);
+			UsuarioText.setBounds(79, 96, 434, 42);
 			panel.add(UsuarioText);
 			UsuarioText.setColumns(10);	
 			
@@ -108,6 +108,20 @@ public class PantallaLogin  {
 			//panel.add(lblNewJgoodiesLabel);
 			
 			JButton btnRecuperar = new JButton("He olvidado mi contrase\u00F1a");
+			btnRecuperar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					/*
+					 * 
+					 * AÑADIR QUE CUANDO SE PRESIONE EL BOTON SE DIRIJA A UNA NUEVA VENTANA Y 
+					 * SE LE PIDA EL CORREO ELECTRONICO
+					 * 
+					 * EL SISTEMA DEVOLVERA UN MENSAJE DE CORREO ELECTRONICO COMPROBADO. VERIFIQUE SU CORREO PARA REESTABLECER
+					 * LA CONTRASEÑA
+					 * 
+					 * 
+					 * */
+				}
+			});
 			btnRecuperar.hide();
 			btnRecuperar.setHorizontalAlignment(SwingConstants.LEFT);
 			btnRecuperar.setForeground(SystemColor.textHighlight);
@@ -115,7 +129,7 @@ public class PantallaLogin  {
 			btnRecuperar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnRecuperar.setBackground(Color.WHITE);
 			btnRecuperar.setBorder(null);
-			btnRecuperar.setBounds(79, 284, 168, 21);
+			btnRecuperar.setBounds(79, 258, 168, 21);
 			panel.add(btnRecuperar);
 
 			frmUclm.setVisible(true);
@@ -133,9 +147,9 @@ public class PantallaLogin  {
 			userLabel.setBounds(233, 11, 148, 25);
 			panel.add(userLabel);
 
-			JLabel passwordLabel = new JLabel("Escribir Contrase\u00F1a");
+			JLabel passwordLabel = new JLabel("Contraseña");
 			passwordLabel.hide();
-			passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
+			passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
 			passwordLabel.setBounds(80, 167, 215, 42);
 			panel.add(passwordLabel);
 			
@@ -145,7 +159,7 @@ public class PantallaLogin  {
 			user.setBorder(null);
 			user.setEditable(false);
 			user.hide();
-			user.setBounds(81, 66, 252, 19);
+			user.setBounds(79, 108, 252, 19);
 			panel.add(user);
 			user.setColumns(10);
 			
@@ -156,7 +170,7 @@ public class PantallaLogin  {
 			btnNoAcceder.setFont(new Font("Tahoma", Font.BOLD, 12));
 			btnNoAcceder.setBorder(null);
 			btnNoAcceder.setBackground(Color.WHITE);
-			btnNoAcceder.setBounds(79, 258, 216, 21);
+			btnNoAcceder.setBounds(79, 149, 216, 21);
 			panel.add(btnNoAcceder);
 			
 			JButton btnNewButton = new JButton("Volver");
@@ -166,6 +180,11 @@ public class PantallaLogin  {
 			btnNewButton.setBackground(SystemColor.textHighlight);
 			btnNewButton.setBounds(44, 316, 114, 49);
 			panel.add(btnNewButton);
+			
+			JLabel lblEscribirCorreoElectronico = new JLabel("Tipo de usuario");
+			lblEscribirCorreoElectronico.setFont(new Font("Tahoma", Font.BOLD, 17));
+			lblEscribirCorreoElectronico.setBounds(79, 47, 302, 42);
+			panel.add(lblEscribirCorreoElectronico);
 			btnNewButton.hide();
 			btnNewButton.addActionListener((ActionListener) new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -210,7 +229,8 @@ public class PantallaLogin  {
 						else {
 									 try {
 										 GestorBD.connect();
-										 String user= "SELECT usuario FROM Usuarios WHERE usuario = '"+usu+"'";
+										 //he modificado la siguiente linea "usuario"
+										 String user= "SELECT tipoUsuario FROM Usuarios WHERE tipoUsuario = '"+usu+"'";
 										 Vector<Object> usuario,contra;
 										usuario = GestorBD.getAgente().select(user);
 										
@@ -249,8 +269,8 @@ public class PantallaLogin  {
 		}
 		public static String devolverNombre(String usu) {
 			String nombre;
-			String name= "SELECT nombre FROM Usuarios WHERE usuario = '"+usu+"'";
-			String ape= "SELECT apellidos FROM Usuarios WHERE usuario = '"+usu+"'";
+			String name= "SELECT nombre FROM Usuarios WHERE tipoUsuario = '"+usu+"'";
+			String ape= "SELECT apellidos FROM Usuarios WHERE tipoUsuario = '"+usu+"'";
 			 Vector<Object> nom,apellidos;
 			try {
 				nom = GestorBD.getAgente().select(name);
@@ -265,7 +285,7 @@ public class PantallaLogin  {
 }
 		public static String devolverTipo(String usu) {
 			String tipo;
-			String sql= "SELECT tipoUsuario FROM Usuarios WHERE usuario = '"+usu+"'";
+			String sql= "SELECT tipoUsuario FROM Usuarios WHERE tipoUsuario = '"+usu+"'";
 			 Vector<Object> nom;
 			try {
 				nom = GestorBD.getAgente().select(sql);
