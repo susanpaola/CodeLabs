@@ -48,9 +48,7 @@ public class PantallaLogin  {
 	
 
 	private static void placeComponents(JPanel panel) {
-
 		panel.setLayout(null);
-	
 	}
 
 		/**
@@ -58,7 +56,7 @@ public class PantallaLogin  {
 		 */
 		public static void mostrar() {
 			JFrame frmUclm = new JFrame("Demo application");
-			frmUclm.setIconImage(Toolkit.getDefaultToolkit().getImage("C:C:\\Users\\34636\\Documents\\3º 22-23\\1º CUATRI\\ISO 2\\ProyectoISO\\logoUCLM.jpg"));
+			frmUclm.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 			frmUclm.setTitle("UCLM");
 			frmUclm.setSize(625, 428);
 			frmUclm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -74,8 +72,8 @@ public class PantallaLogin  {
 				}
 			});
 			loginButton.hide();
-			loginButton.setForeground(new Color(192, 192, 192));
-			loginButton.setBackground(SystemColor.textHighlight);
+			loginButton.setForeground(new Color(0, 0, 0));
+			loginButton.setBackground(new Color(0, 0, 255));
 			loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			loginButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 			loginButton.setBounds(406, 316, 168, 48);
@@ -100,13 +98,6 @@ public class PantallaLogin  {
 			UsuarioText.setBounds(79, 96, 434, 42);
 			panel.add(UsuarioText);
 			UsuarioText.setColumns(10);	
-			
-		
-			//JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("");
-			//lblNewJgoodiesLabel.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\ImagenUCLM.png"));
-			//lblNewJgoodiesLabel.setBounds(44, 10, 310, 99);
-			//panel.add(lblNewJgoodiesLabel);
-			
 			JButton btnRecuperar = new JButton("He olvidado mi contrase\u00F1a");
 			btnRecuperar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -175,9 +166,9 @@ public class PantallaLogin  {
 			
 			JButton btnNewButton = new JButton("Volver");
 			btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnNewButton.setForeground(new Color(192, 192, 192));
+			btnNewButton.setForeground(new Color(0, 0, 0));
 			btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-			btnNewButton.setBackground(SystemColor.textHighlight);
+			btnNewButton.setBackground(new Color(0, 0, 255));
 			btnNewButton.setBounds(44, 316, 114, 49);
 			panel.add(btnNewButton);
 			
@@ -196,10 +187,6 @@ public class PantallaLogin  {
 						
 					}
 			});
-			
-			
-
-			
 
 			btnSiguiente.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

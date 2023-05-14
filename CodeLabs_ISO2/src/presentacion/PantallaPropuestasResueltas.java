@@ -56,7 +56,7 @@ public class PantallaPropuestasResueltas extends JFrame {
 	 */
 	public PantallaPropuestasResueltas() throws Exception {
 		setTitle("UCLM");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\IconUCLM.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
@@ -68,10 +68,10 @@ public class PantallaPropuestasResueltas extends JFrame {
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnVolver.setForeground(new Color(192, 192, 192));
+		btnVolver.setForeground(new Color(0, 0, 0));
 		btnVolver.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnVolver.setBackground(SystemColor.textHighlight);
-		btnVolver.setBounds(633, 394, 114, 49);
+		btnVolver.setBounds(340, 382, 114, 49);
        	btnVolver.addActionListener((ActionListener) new ActionListener() {
     			public void actionPerformed(ActionEvent e) {			
      
@@ -81,29 +81,20 @@ public class PantallaPropuestasResueltas extends JFrame {
         	}
         	});
 		contentPane.add(btnVolver);
-
-		
-		//JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("");
-		//lblNewJgoodiesLabel.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\ImagenUCLM.png"));
-		//lblNewJgoodiesLabel.setBounds(20, 10, 310, 99);
-		//contentPane.add(lblNewJgoodiesLabel);
-		
 		GestorConsultas gestor = new GestorConsultas();
-		
 		
 		DefaultListModel listModel;
 		listModel = new DefaultListModel();
 		JList list = new JList(listModel);
+		list.setBackground(new Color(255, 182, 193));
 		
 		for (int b=0; b<gestor.estadoResuelto().size();b++) {
 			listModel.addElement(gestor.estadoResuelto().get(b).toString().replace("[", "").replace("]", ""));	
 		}
 
-		list.setBounds(30, 119, 574, 324);
+		list.setBounds(102, 21, 574, 324);
 		contentPane.add(list);
-	    
-      
- 
+
 	}
 
 }

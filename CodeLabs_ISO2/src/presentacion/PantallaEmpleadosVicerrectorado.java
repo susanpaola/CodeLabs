@@ -57,7 +57,7 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 	 */
 	public PantallaEmpleadosVicerrectorado() {
 		setTitle("UCLM");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\Documents\\3º 22-23\\1º CUATRI\\ISO 2\\ProyectoISO\\logoUCLM.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
@@ -67,17 +67,11 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
-		//JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("");
-		//lblNewJgoodiesLabel.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\ImagenUCLM.png"));
-		//lblNewJgoodiesLabel.setBounds(20, 10, 310, 99);
-		//contentPane.add(lblNewJgoodiesLabel);
-		
 		JButton btnRealizarPropuesta = new JButton("Evaluar Propuestas Disponibles");
 		btnRealizarPropuesta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnRealizarPropuesta.setForeground(new Color(192, 192, 192));
-		btnRealizarPropuesta.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnRealizarPropuesta.setBackground(SystemColor.textHighlight);
+		btnRealizarPropuesta.setForeground(new Color(0, 0, 0));
+		btnRealizarPropuesta.setFont(new Font("Tahoma", Font.BOLD, 19));
+		btnRealizarPropuesta.setBackground(new Color(0, 0, 255));
 		btnRealizarPropuesta.setBounds(86, 266, 604, 99);
 		contentPane.add(btnRealizarPropuesta);
 		btnRealizarPropuesta.addActionListener((ActionListener) new ActionListener() {
@@ -113,7 +107,7 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 		NombreUsu.setColumns(10);
 		NombreUsu.setBorder(null);
 		NombreUsu.setBackground(Color.WHITE);
-		NombreUsu.setBounds(243, 103, 336, 19);
+		NombreUsu.setBounds(216, 129, 336, 19);
 		contentPane.add(NombreUsu);
 		
 		
@@ -125,15 +119,9 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 		TipoUsuario.setColumns(10);
 		TipoUsuario.setBorder(null);
 		TipoUsuario.setBackground(Color.WHITE);
-		TipoUsuario.setBounds(243, 145, 336, 19);
+		TipoUsuario.setBounds(216, 175, 336, 19);
 		contentPane.add(TipoUsuario);
-		 
-		
-		
-		//JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("");
-		//lblNewJgoodiesLabel_1.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\images2.jpg"));
-		//lblNewJgoodiesLabel_1.setBounds(609, 39, 125, 125);
-		//contentPane.add(lblNewJgoodiesLabel_1);
+
 	}
 
 }

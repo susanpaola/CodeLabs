@@ -64,7 +64,7 @@ public class PantallaAceptarCursos extends JFrame {
 	 */
 	public PantallaAceptarCursos() throws Exception {
 		setTitle("UCLM");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\Documents\\3º 22-23\\1º CUATRI\\ISO 2\\ProyectoISO\\logoUCLM.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
@@ -76,10 +76,10 @@ public class PantallaAceptarCursos extends JFrame {
 		
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAceptar.setForeground(new Color(192, 192, 192));
+		btnAceptar.setForeground(new Color(0, 0, 0));
 		btnAceptar.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnAceptar.setBackground(Color.GREEN);
-		btnAceptar.setBounds(633, 179, 114, 49);
+		btnAceptar.setBackground(new Color(152, 251, 152));
+		btnAceptar.setBounds(345, 346, 114, 49);
 		btnAceptar.hide();
 		btnAceptar.addActionListener((ActionListener) new ActionListener() {
     		
@@ -92,24 +92,18 @@ public class PantallaAceptarCursos extends JFrame {
 		JButton btnDenegar = new JButton("Denegar");
 		btnDenegar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnDenegar.hide();
-		btnDenegar.setForeground(new Color(192, 192, 192));
+		btnDenegar.setForeground(new Color(0, 0, 0));
 		btnDenegar.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnDenegar.setBackground(Color.RED);
-		btnDenegar.setBounds(633, 317, 114, 49);
+		btnDenegar.setBackground(new Color(255, 69, 0));
+		btnDenegar.setBounds(345, 412, 114, 49);
 
 		contentPane.add(btnDenegar);
-
-		
-		//JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("");
-		//lblNewJgoodiesLabel.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\ImagenUCLM.png"));
-		//lblNewJgoodiesLabel.setBounds(20, 10, 310, 99);
-		//contentPane.add(lblNewJgoodiesLabel);
-		
 		GestorConsultas gestor = new GestorConsultas();
 		Vector<Object> a = gestor.consultarCusos("SELECT id,nombre,ECTS,centro,director,tipo FROM CursoPropio WHERE `estado`= 'PROPUESTO'");
 		DefaultListModel listModel;
 		listModel = new DefaultListModel();
 		JList list = new JList(listModel);
+		list.setBackground(new Color(255, 182, 193));
 	
 		list.addListSelectionListener(new ListSelectionListener() {
 
@@ -188,7 +182,7 @@ public class PantallaAceptarCursos extends JFrame {
 		}
 		
 
-		list.setBounds(30, 119, 574, 324);
+		list.setBounds(115, 11, 574, 324);
 		contentPane.add(list);
 		
 

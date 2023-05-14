@@ -57,7 +57,7 @@ public class PantallaEstudiante extends JFrame {
 	 */
 	public PantallaEstudiante() {
 		setTitle("UCLM");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\Documents\\3º 22-23\\1º CUATRI\\ISO 2\\ProyectoISO\\logoUCLM.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
@@ -69,10 +69,10 @@ public class PantallaEstudiante extends JFrame {
 		
 		JButton btnMostrarPendientes = new JButton("Realizar matriculaci\u00F3n");
 		btnMostrarPendientes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnMostrarPendientes.setForeground(new Color(192, 192, 192));
-		btnMostrarPendientes.setBackground(SystemColor.textHighlight);
-		btnMostrarPendientes.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnMostrarPendientes.setBounds(201, 281, 310, 99);
+		btnMostrarPendientes.setForeground(new Color(0, 0, 0));
+		btnMostrarPendientes.setBackground(new Color(0, 0, 255));
+		btnMostrarPendientes.setFont(new Font("Tahoma", Font.BOLD, 19));
+		btnMostrarPendientes.setBounds(167, 281, 438, 99);
 		contentPane.add(btnMostrarPendientes);
 		btnMostrarPendientes.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -95,13 +95,6 @@ public class PantallaEstudiante extends JFrame {
 
 				}
 		});
-		
-		
-		//JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("");
-		//lblNewJgoodiesLabel.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\ImagenUCLM.png"));
-		//lblNewJgoodiesLabel.setBounds(20, 10, 310, 99);
-		//contentPane.add(lblNewJgoodiesLabel);
-		
 		
 		NombreUsu = new JTextField();
 		NombreUsu.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
@@ -135,13 +128,6 @@ public class PantallaEstudiante extends JFrame {
 		lblTipoUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblTipoUsuario.setBounds(167, 149, 130, 13);
 		contentPane.add(lblTipoUsuario);
-		 
-		
-		
-		//JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("");
-		//lblNewJgoodiesLabel_1.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\images2.jpg"));
-	//	lblNewJgoodiesLabel_1.setBounds(609, 39, 125, 125);
-	//	contentPane.add(lblNewJgoodiesLabel_1);
 	}
 
 }

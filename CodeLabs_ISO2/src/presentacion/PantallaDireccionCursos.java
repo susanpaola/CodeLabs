@@ -56,7 +56,7 @@ public class PantallaDireccionCursos extends JFrame {
 	 */
 	public PantallaDireccionCursos() {
 		setTitle("UCLM");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\Documents\\3º 22-23\\1º CUATRI\\ISO 2\\ProyectoISO\\logoUCLM.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
@@ -68,10 +68,10 @@ public class PantallaDireccionCursos extends JFrame {
 		
 		JButton btnMostrarPendientes = new JButton("Propuestas pendientes");
 		btnMostrarPendientes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnMostrarPendientes.setForeground(new Color(192, 192, 192));
-		btnMostrarPendientes.setBackground(SystemColor.textHighlight);
-		btnMostrarPendientes.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnMostrarPendientes.setBounds(103, 330, 228, 99);
+		btnMostrarPendientes.setForeground(new Color(0, 0, 0));
+		btnMostrarPendientes.setBackground(new Color(0, 0, 255));
+		btnMostrarPendientes.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnMostrarPendientes.setBounds(515, 240, 244, 122);
 		contentPane.add(btnMostrarPendientes);
 		btnMostrarPendientes.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -94,18 +94,12 @@ public class PantallaDireccionCursos extends JFrame {
 				}
 		});
 		
-		
-		//JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("");
-		//lblNewJgoodiesLabel.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\ImagenUCLM.png"));
-		//lblNewJgoodiesLabel.setBounds(20, 10, 310, 99);
-		//contentPane.add(lblNewJgoodiesLabel);
-		
 		JButton btnRealizarPropuesta = new JButton("Realizar propuesta");
 		btnRealizarPropuesta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnRealizarPropuesta.setForeground(new Color(192, 192, 192));
-		btnRealizarPropuesta.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnRealizarPropuesta.setBackground(SystemColor.textHighlight);
-		btnRealizarPropuesta.setBounds(461, 330, 228, 99);
+		btnRealizarPropuesta.setForeground(new Color(0, 0, 0));
+		btnRealizarPropuesta.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnRealizarPropuesta.setBackground(new Color(0, 0, 255));
+		btnRealizarPropuesta.setBounds(261, 240, 244, 122);
 		contentPane.add(btnRealizarPropuesta);
 		btnRealizarPropuesta.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -128,7 +122,7 @@ public class PantallaDireccionCursos extends JFrame {
 		NombreUsu.setColumns(10);
 		NombreUsu.setBorder(null);
 		NombreUsu.setBackground(new Color(192, 192, 192));
-		NombreUsu.setBounds(461, 132, 252, 19);
+		NombreUsu.setBounds(130, 100, 252, 19);
 		contentPane.add(NombreUsu);
 		
 		
@@ -141,22 +135,16 @@ public class PantallaDireccionCursos extends JFrame {
 		TipoUsuario.setColumns(10);
 		TipoUsuario.setBorder(null);
 		TipoUsuario.setBackground(new Color(192, 192, 192));
-		TipoUsuario.setBounds(461, 196, 252, 19);
+		TipoUsuario.setBounds(507, 100, 252, 19);
 		contentPane.add(TipoUsuario);
 		 
 		
-		
-		//JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("");
-		//lblNewJgoodiesLabel_1.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\images2.jpg"));
-		//lblNewJgoodiesLabel_1.setBounds(609, 39, 125, 125);
-		//contentPane.add(lblNewJgoodiesLabel_1);
-		
 		JButton btnMostrarResueltos = new JButton("Propuestas resueltas");
 		btnMostrarResueltos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnMostrarResueltos.setForeground(new Color(192, 192, 192));
-		btnMostrarResueltos.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnMostrarResueltos.setBackground(SystemColor.textHighlight);
-		btnMostrarResueltos.setBounds(103, 146, 228, 99);
+		btnMostrarResueltos.setForeground(new Color(0, 0, 0));
+		btnMostrarResueltos.setFont(new Font("Tahoma", Font.BOLD, 19));
+		btnMostrarResueltos.setBackground(new Color(0, 0, 255));
+		btnMostrarResueltos.setBounds(7, 240, 244, 122);
 		btnMostrarResueltos.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -180,12 +168,14 @@ public class PantallaDireccionCursos extends JFrame {
 	});
 		contentPane.add(btnMostrarResueltos);
 		
-		JLabel lblNewLabel = new JLabel("Nombre usuario");
-		lblNewLabel.setBounds(457, 95, 146, 26);
+		JLabel lblNewLabel = new JLabel("Nombre usuario:");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel.setBounds(10, 96, 113, 26);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Tipo de usuario");
-		lblNewLabel_1.setBounds(461, 171, 100, 14);
+		JLabel lblNewLabel_1 = new JLabel("Tipo de usuario:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1.setBounds(392, 96, 113, 26);
 		contentPane.add(lblNewLabel_1);
 	}
 	public String devolverDNI(String usu, int tipoUsu) {
@@ -203,7 +193,6 @@ public class PantallaDireccionCursos extends JFrame {
 			
 			return tipo;
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		return "";
