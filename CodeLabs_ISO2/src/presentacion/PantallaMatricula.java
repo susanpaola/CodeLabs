@@ -72,7 +72,7 @@ public class PantallaMatricula extends JFrame {
 	@SuppressWarnings({ "unchecked", "deprecation" })
 	public PantallaMatricula() throws Exception {
 		setTitle("UCLM");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\IconUCLM.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
@@ -99,13 +99,6 @@ public class PantallaMatricula extends JFrame {
 		btnTrans.setBounds(449, 380, 226, 75);
 		btnTrans.hide();
 		contentPane.add(btnTrans);
-
-		
-		//JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("");
-		//lblNewJgoodiesLabel.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\ImagenUCLM.png"));
-		//lblNewJgoodiesLabel.setBounds(20, 10, 310, 99);
-		//contentPane.add(lblNewJgoodiesLabel);
-		
 		GestorConsultas gestorConsultas = new GestorConsultas();
 		
 		Vector<Object> a = gestorConsultas.consultarCusos("SELECT id,nombre,ECTS,centro,director,tipo,tasa FROM CursoPropio WHERE `estado`= 'VALIDADO'");

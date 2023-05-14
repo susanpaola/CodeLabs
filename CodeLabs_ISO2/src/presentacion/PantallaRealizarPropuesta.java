@@ -1,5 +1,6 @@
 package presentacion;
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -36,9 +37,9 @@ import javax.swing.JButton;
 import java.awt.Cursor;
 import javax.swing.border.SoftBevelBorder;
 
-import org.jdatepicker.JDatePanel;
-import org.jdatepicker.JDatePicker;
-import org.jdatepicker.UtilDateModel;
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
 
 
 import javax.swing.border.BevelBorder;
@@ -69,8 +70,8 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 	protected JButton btnFinalizar;
 	protected JButton btnSiguiente;
 	protected JButton btnNext;
-	protected JDatePicker datePickerFin;
-	protected JDatePicker datePickerIni;
+	protected JDatePickerImpl datePickerFin;
+	protected JDatePickerImpl datePickerIni;
 	protected JLabel label;
 	protected JLabel lblNewLabel;
 	protected JLabel lblPrecio;
@@ -109,7 +110,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 	String Num;
 	
 	public PantallaRealizarPropuesta() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\Documents\\3º 22-23\\1º CUATRI\\ISO 2\\ProyectoISO\\logoUCLM.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 		setTitle("UCLM\r\n");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 770, 618);
@@ -121,13 +122,6 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
-		
-		//JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("");
-		//lblNewJgoodiesLabel.setIcon(new ImageIcon("C:\\Users\\Usuario\\git\\PROYECTOS_GIT\\TecnoSoftware\\Proyecto-ISO-2-TecnoSoftware\\Proyecto_TecnoSoftware\\Imagenes\\ImagenUCLM.png"));
-		//lblNewJgoodiesLabel.setBounds(20, 10, 310, 99);
-		//contentPane.add(lblNewJgoodiesLabel);
-		
 		NombreCurso = new JTextField();
 		NombreCurso.setBorder(new MatteBorder(0, 0, 1, 0, new Color(0, 120, 215)));
 		NombreCurso.setFont(new Font(tipoLetra, Font.BOLD, 13));
@@ -136,8 +130,8 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		NombreCurso.setColumns(10);
 		
 		btnNewButton = new JButton("Volver");
-		btnNewButton.setForeground(new Color(192, 192, 192));
-		btnNewButton.setBackground(SystemColor.textHighlight);
+		btnNewButton.setForeground(new Color(0, 0, 0));
+		btnNewButton.setBackground(new Color(0, 0, 255));
 		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton.setFont(new Font(tipoLetra, Font.BOLD, 15));
 		btnNewButton.setBounds(20, 496, 114, 49);
@@ -160,11 +154,6 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		NumCreditos.setBounds(454, 220, 259, 39);
 		NumCreditos.addFocusListener(this);
 		contentPane.add(NumCreditos);
-		
-		
-		
-
-		
 		
 		Facultad = new JTextField();
 		Facultad.setBorder(new MatteBorder(0, 0, 1, 0,  SystemColor.textHighlight));
@@ -192,7 +181,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		pr.put("text.today", "Today");
 		pr.put("text.month", "Month");
 		pr.put("text.year", "Year");
-		JDatePanel datePanel = new JDatePanel(model);
+		JDatePanelImpl datePanel = new JDatePanelImpl(model,pr);
 		
 		CategoriaProf = new JTextField();
 		CategoriaProf.setBorder(new MatteBorder(0, 0, 1, 0, (Color) SystemColor.textHighlight));
@@ -201,34 +190,30 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		CategoriaProf.setBounds(71, 337, 259, 39);
 		contentPane.add(CategoriaProf);
 		
-		//datePickerFin = new JDatePicker(datePanel,new DateLabelFormatter());
-		datePickerFin = new JDatePicker();
+		datePickerFin = new JDatePickerImpl(datePanel,new DateLabelFormatter());
 		datePickerFin.setBorder(null);
 		datePickerFin.setSize(200, 200);
 		datePickerFin.setLocation(245, 195);
 		datePickerFin.hide();
 		datePickerFin.setFont(new Font(tipoLetra, Font.BOLD, 15));
-		datePickerFin.getFormattedTextField().setFont(new Font(tipoLetra, Font.BOLD, 15));
+		datePickerFin.getJFormattedTextField().setFont(new Font(tipoLetra, Font.BOLD, 15));
 		datePickerFin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		datePickerFin.getFormattedTextField().setBorder(new MatteBorder(1, 1, 1, 1, new Color(0, 120, 215)));
+		datePickerFin.getJFormattedTextField().setBorder(new MatteBorder(1, 1, 1, 1, new Color(0, 120, 215)));
 		datePickerFin.setBackground(new Color(255, 255, 255));
-		datePickerFin.getFormattedTextField().setBackground(new Color(255, 255, 255));
+		datePickerFin.getJFormattedTextField().setBackground(new Color(255, 255, 255));
 		contentPane.add(datePickerFin);
 		
-		
-
-		//datePickerIni = new JDatePicker(datePanel,new DateLabelFormatter());
-		datePickerIni = new JDatePicker();
-		datePickerIni.getFormattedTextField().setEditable(true);
+		datePickerIni = new JDatePickerImpl(datePanel,new DateLabelFormatter());
+		datePickerIni.getJFormattedTextField().setEditable(true);
 		datePickerIni.hide();
 		datePickerIni.setFont(new Font(tipoLetra, Font.BOLD, 15));
-		datePickerIni.getFormattedTextField().setFont(new Font(tipoLetra, Font.BOLD, 15));
+		datePickerIni.getJFormattedTextField().setFont(new Font(tipoLetra, Font.BOLD, 15));
 		datePickerIni.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		datePickerIni.getFormattedTextField().setBorder(new MatteBorder(1, 1, 1, 1, new Color(0, 120, 215)));
+		datePickerIni.getJFormattedTextField().setBorder(new MatteBorder(1, 1, 1, 1, new Color(0, 120, 215)));
 		datePickerIni.setSize(200, 200);
 		datePickerIni.setLocation(245, 195);
 		datePickerIni.setBackground(new Color(255, 255, 255));
-		datePickerIni.getFormattedTextField().setBackground(new Color(255, 255, 255));
+		datePickerIni.getJFormattedTextField().setBackground(new Color(255, 255, 255));
 		contentPane.add(datePickerIni);
 		
 		label = new JLabel("Seleccione la fecha de inicio:");
@@ -237,20 +222,18 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		label.setBounds(30, 115, 379, 42);
 		contentPane.add(label);
 		
-		
-		
 		btnFinalizar = new JButton("Finalizar");
 		btnFinalizar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnFinalizar.setForeground(new Color(192, 192, 192));
+		btnFinalizar.setForeground(new Color(0, 0, 0));
 		btnFinalizar.setFont(new Font(tipoLetra, Font.BOLD, 15));
-		btnFinalizar.setBackground(SystemColor.textHighlight);
+		btnFinalizar.setBackground(new Color(0, 0, 255));
 		btnFinalizar.setBounds(594, 490, 114, 49);
 		btnFinalizar.hide();
 		contentPane.add(btnFinalizar);
 		
 		btnFinalizar.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (datePickerFin.getFormattedTextField().getText().equals("")) {
+				if (datePickerFin.getJFormattedTextField().getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "Introduzca los campos necesarios.", ERROR, JOptionPane.ERROR_MESSAGE);
 				}
 				else {
@@ -291,7 +274,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 							break;
 					}
 						
-					curso = new CursoPropio(numRand(), NombreCurso.getText(), Integer.parseInt(NumCreditos.getText()), datePickerFin.getFormattedTextField().getText(), datePickerFin.getFormattedTextField().getText(), Double.parseDouble(textPrecio.getText()), Integer.parseInt(Edicion.getText()), Facultad.getText(), NombreProf.getText(), CategoriaProf.getText(), estado, tipo);
+					curso = new CursoPropio(numRand(), NombreCurso.getText(), Integer.parseInt(NumCreditos.getText()), datePickerFin.getJFormattedTextField().getText(), datePickerFin.getJFormattedTextField().getText(), Double.parseDouble(textPrecio.getText()), Integer.parseInt(Edicion.getText()), Facultad.getText(), NombreProf.getText(), CategoriaProf.getText(), estado, tipo);
 					GestorPropuestasCursos gestorCursos = new GestorPropuestasCursos();
 					gestorCursos.realizarPropuestaCurso(curso);
 						 } catch (NumberFormatException e1) {
@@ -304,9 +287,6 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 			
 		});
 		
-
-
-		
 		btnSiguiente = new JButton("Siguiente");
 		btnSiguiente.setForeground(Color.WHITE);
 		btnSiguiente.setBackground(SystemColor.textHighlight);
@@ -316,7 +296,6 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		contentPane.add(btnSiguiente);
 		btnSiguiente.addActionListener(new ActionListener() {
 	
-
 			public void actionPerformed(ActionEvent e) {
 				
 				Num=NumCreditos.getText();
@@ -418,7 +397,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 			public void actionPerformed(ActionEvent e) {
 				
 
-				if (datePickerIni.getFormattedTextField().getText().equals("")) {
+				if (datePickerIni.getJFormattedTextField().getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "Introduzca los campos necesarios.", ERROR, JOptionPane.ERROR_MESSAGE);
 				}
 				else {
@@ -426,7 +405,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 					datePickerIni.hide();
 					btnFinalizar.show();
 				label.setText("Seleccione la fecha de fin:");
-				datePickerFin.getFormattedTextField().setText("");
+				datePickerFin.getJFormattedTextField().setText("");
 				}
 			}
 		});
@@ -459,8 +438,6 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
     	lblDuracinDelCurso.hide();
     	datePickerIni.show();
     	comboBox.hide();
-    	
-    	
     }
 	public void compruebaCreditos (String c) {
 		int num = Integer.parseInt(Num);
@@ -591,7 +568,5 @@ mostrarFechas();
 
 	        return "";
 	    }
-
-
 	}
 }
