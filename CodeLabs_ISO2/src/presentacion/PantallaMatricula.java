@@ -129,15 +129,15 @@ public class PantallaMatricula extends JFrame {
         		       
         		        int idTit = Integer.parseInt(idTitulo);
             			
-        		        //OJO EN LA SIGUIENTE LINEA PONE SAMUEL
-            			Matricula m= new Matricula(numRand(), miFechaCad, true, 0, tipoPago, idTit, d.devolverDNI("Samuel", 1));
+        		        
+            			Matricula m= new Matricula(numRand(), miFechaCad, true, 0, tipoPago, idTit, d.devolverDNI("Susan", 1));
             			
             			GestorMatriculacion gestorMatriculacion = new GestorMatriculacion();
             			int res = gestorMatriculacion.realizarMatriculacion(null, null, m);
             				
             			
         				if (res==1) {
-        					JOptionPane.showMessageDialog(null, "Se ha matriculado en el curso de forma correcta.", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+        					JOptionPane.showMessageDialog(null, "La matrícula se ha realizado correctamente.", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
         					PantallaEstudiante est = new PantallaEstudiante();
         					est.setVisible(true);
         					setVisible(false);
@@ -160,14 +160,14 @@ public class PantallaMatricula extends JFrame {
         		       
             				int idTit = Integer.parseInt(idTitulo);
             			
-            				Matricula m= new Matricula(numRand(), miFechaCad, true, 0, tipoPago, idTit, d.devolverDNI("Samuel", 1));
+            				Matricula m= new Matricula(numRand(), miFechaCad, true, 0, tipoPago, idTit, d.devolverDNI("Susan", 1));
             			
             				GestorMatriculacion gestorMatriculacion = new GestorMatriculacion();
             				int res = gestorMatriculacion.realizarMatriculacion(null, null, m);
             				
             			
             				if (res==1) {
-            					JOptionPane.showMessageDialog(null, "Se ha matriculado en el curso de forma correcta.", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+            					JOptionPane.showMessageDialog(null, "La matrícula se ha realizado correctamente.", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
             					PantallaEstudiante est = new PantallaEstudiante();
             					est.setVisible(true);
             					setVisible(false);
