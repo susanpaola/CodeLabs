@@ -131,7 +131,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		
 		btnNewButton = new JButton("Volver");
 		btnNewButton.setForeground(new Color(0, 0, 0));
-		btnNewButton.setBackground(new Color(0, 0, 255));
+		btnNewButton.setBackground(new Color(255, 182, 193));
 		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton.setFont(new Font(tipoLetra, Font.BOLD, 15));
 		btnNewButton.setBounds(20, 496, 114, 49);
@@ -226,7 +226,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		btnFinalizar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnFinalizar.setForeground(new Color(0, 0, 0));
 		btnFinalizar.setFont(new Font(tipoLetra, Font.BOLD, 15));
-		btnFinalizar.setBackground(new Color(0, 0, 255));
+		btnFinalizar.setBackground(new Color(255, 182, 193));
 		btnFinalizar.setBounds(594, 490, 114, 49);
 		btnFinalizar.hide();
 		contentPane.add(btnFinalizar);

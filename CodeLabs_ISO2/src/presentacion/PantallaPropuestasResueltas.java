@@ -70,7 +70,7 @@ public class PantallaPropuestasResueltas extends JFrame {
 		btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnVolver.setForeground(new Color(0, 0, 0));
 		btnVolver.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnVolver.setBackground(SystemColor.textHighlight);
+		btnVolver.setBackground(new Color(255, 182, 193));
 		btnVolver.setBounds(340, 382, 114, 49);
        	btnVolver.addActionListener((ActionListener) new ActionListener() {
     			public void actionPerformed(ActionEvent e) {			
@@ -86,7 +86,7 @@ public class PantallaPropuestasResueltas extends JFrame {
 		DefaultListModel listModel;
 		listModel = new DefaultListModel();
 		JList list = new JList(listModel);
-		list.setBackground(new Color(255, 182, 193));
+		list.setBackground(new Color(255, 228, 225));
 		
 		for (int b=0; b<gestor.estadoResuelto().size();b++) {
 			listModel.addElement(gestor.estadoResuelto().get(b).toString().replace("[", "").replace("]", ""));	
