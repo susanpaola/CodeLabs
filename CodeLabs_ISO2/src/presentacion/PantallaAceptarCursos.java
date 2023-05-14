@@ -103,7 +103,7 @@ public class PantallaAceptarCursos extends JFrame {
 		DefaultListModel listModel;
 		listModel = new DefaultListModel();
 		JList list = new JList(listModel);
-		list.setBackground(new Color(255, 182, 193));
+		list.setBackground(new Color(255, 228, 225));
 	
 		list.addListSelectionListener(new ListSelectionListener() {
 
