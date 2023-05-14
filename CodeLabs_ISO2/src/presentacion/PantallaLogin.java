@@ -73,7 +73,7 @@ public class PantallaLogin  {
 			});
 			loginButton.hide();
 			loginButton.setForeground(new Color(0, 0, 0));
-			loginButton.setBackground(new Color(0, 0, 255));
+			loginButton.setBackground(new Color(255, 182, 193));
 			loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			loginButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 			loginButton.setBounds(406, 316, 168, 48);
@@ -101,16 +101,8 @@ public class PantallaLogin  {
 			JButton btnRecuperar = new JButton("He olvidado mi contrase\u00F1a");
 			btnRecuperar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					/*
-					 * 
-					 * AÑADIR QUE CUANDO SE PRESIONE EL BOTON SE DIRIJA A UNA NUEVA VENTANA Y 
-					 * SE LE PIDA EL CORREO ELECTRONICO
-					 * 
-					 * EL SISTEMA DEVOLVERA UN MENSAJE DE CORREO ELECTRONICO COMPROBADO. VERIFIQUE SU CORREO PARA REESTABLECER
-					 * LA CONTRASEÑA
-					 * 
-					 * 
-					 * */
+					JOptionPane.showMessageDialog(null, "Hemos enviado su problema al personal de soporte de la UCLM. Pronto se pondrán en contacto con usted.", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+					ContrasenaText.setText("");
 				}
 			});
 			btnRecuperar.hide();
@@ -126,9 +118,9 @@ public class PantallaLogin  {
 			frmUclm.setVisible(true);
 			JButton btnSiguiente = new JButton("Siguiente");
 			btnSiguiente.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnSiguiente.setForeground(Color.WHITE);
+			btnSiguiente.setForeground(new Color(0, 0, 0));
 			btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 15));
-			btnSiguiente.setBackground(SystemColor.textHighlight);
+			btnSiguiente.setBackground(new Color(255, 182, 193));
 			btnSiguiente.setBounds(406, 316, 168, 48);
 			panel.add(btnSiguiente);
 			
@@ -155,6 +147,12 @@ public class PantallaLogin  {
 			user.setColumns(10);
 			
 			JButton btnNoAcceder = new JButton("\u00BFNo puede acceder a su cuenta?");
+			btnNoAcceder.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JOptionPane.showMessageDialog(null, "Hemos enviado su problema al personal de soporte de la UCLM. Pronto se pondrán en contacto con usted.", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+					UsuarioText.setText("");
+				}
+			});
 			btnNoAcceder.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnNoAcceder.setHorizontalAlignment(SwingConstants.LEFT);
 			btnNoAcceder.setForeground(SystemColor.textHighlight);
@@ -168,7 +166,7 @@ public class PantallaLogin  {
 			btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnNewButton.setForeground(new Color(0, 0, 0));
 			btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-			btnNewButton.setBackground(new Color(0, 0, 255));
+			btnNewButton.setBackground(new Color(255, 182, 193));
 			btnNewButton.setBounds(44, 316, 114, 49);
 			panel.add(btnNewButton);
 			
@@ -192,7 +190,7 @@ public class PantallaLogin  {
 			public void actionPerformed(ActionEvent e) {
 				String usu=UsuarioText.getText();
 			if (usu.length()==0) {
-				JOptionPane.showMessageDialog(null, "Debe introducir su usuario.", "ERROR", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Porfavor introduzca su usuario.", "ERROR", JOptionPane.ERROR_MESSAGE);
 			}
 			else {
 				btnRecuperar.show();
@@ -211,7 +209,7 @@ public class PantallaLogin  {
 					public void actionPerformed(ActionEvent e) {
 						String pass =ContrasenaText.getText();
 						if (pass.length()==0) {
-							JOptionPane.showMessageDialog(null, "Debe introducir su contraseña.", "ERROR", JOptionPane.ERROR_MESSAGE);
+							JOptionPane.showMessageDialog(null, "Porfavor introduzca su contraseña.", "ERROR", JOptionPane.ERROR_MESSAGE);
 						}
 						else {
 									 try {
@@ -241,7 +239,6 @@ public class PantallaLogin  {
 										 }
 										 
 									} catch (Exception e1) {
-										// TODO Auto-generated catch block
 										e1.printStackTrace();
 									}
 									
@@ -265,7 +262,6 @@ public class PantallaLogin  {
 				nombre=(nom.get(0).toString().replace("[", "").replace("]", "")+" "+apellidos.get(0).toString().replace("[", "").replace("]", ""));
 				return nombre;
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			return "";
@@ -280,7 +276,6 @@ public class PantallaLogin  {
 				
 				return tipo;
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			return "";
