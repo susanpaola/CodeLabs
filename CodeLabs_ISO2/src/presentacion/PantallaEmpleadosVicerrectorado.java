@@ -71,7 +71,7 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 		btnRealizarPropuesta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRealizarPropuesta.setForeground(new Color(0, 0, 0));
 		btnRealizarPropuesta.setFont(new Font("Tahoma", Font.BOLD, 19));
-		btnRealizarPropuesta.setBackground(new Color(0, 0, 255));
+		btnRealizarPropuesta.setBackground(new Color(255, 182, 193));
 		btnRealizarPropuesta.setBounds(86, 266, 604, 99);
 		contentPane.add(btnRealizarPropuesta);
 		btnRealizarPropuesta.addActionListener((ActionListener) new ActionListener() {
