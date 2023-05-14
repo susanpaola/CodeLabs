@@ -69,7 +69,7 @@ public class PantallaDireccionCursos extends JFrame {
 		JButton btnMostrarPendientes = new JButton("Propuestas pendientes");
 		btnMostrarPendientes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnMostrarPendientes.setForeground(new Color(0, 0, 0));
-		btnMostrarPendientes.setBackground(new Color(0, 0, 255));
+		btnMostrarPendientes.setBackground(new Color(255, 182, 193));
 		btnMostrarPendientes.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnMostrarPendientes.setBounds(515, 240, 244, 122);
 		contentPane.add(btnMostrarPendientes);
@@ -98,7 +98,7 @@ public class PantallaDireccionCursos extends JFrame {
 		btnRealizarPropuesta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRealizarPropuesta.setForeground(new Color(0, 0, 0));
 		btnRealizarPropuesta.setFont(new Font("Tahoma", Font.BOLD, 18));
-		btnRealizarPropuesta.setBackground(new Color(0, 0, 255));
+		btnRealizarPropuesta.setBackground(new Color(255, 182, 193));
 		btnRealizarPropuesta.setBounds(261, 240, 244, 122);
 		contentPane.add(btnRealizarPropuesta);
 		btnRealizarPropuesta.addActionListener((ActionListener) new ActionListener() {
@@ -117,11 +117,11 @@ public class PantallaDireccionCursos extends JFrame {
 		NombreUsu.setForeground(new Color(0, 0, 0));
 		NombreUsu.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		NombreUsu.setEditable(false);
-		NombreUsu.setHorizontalAlignment(SwingConstants.RIGHT);
+		NombreUsu.setHorizontalAlignment(SwingConstants.CENTER);
 		NombreUsu.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		NombreUsu.setColumns(10);
 		NombreUsu.setBorder(null);
-		NombreUsu.setBackground(new Color(192, 192, 192));
+		NombreUsu.setBackground(new Color(248, 248, 255));
 		NombreUsu.setBounds(130, 100, 252, 19);
 		contentPane.add(NombreUsu);
 		
@@ -129,12 +129,12 @@ public class PantallaDireccionCursos extends JFrame {
 		TipoUsuario = new JTextField();
 		TipoUsuario.setForeground(new Color(0, 0, 0));
 		TipoUsuario.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		TipoUsuario.setHorizontalAlignment(SwingConstants.RIGHT);
+		TipoUsuario.setHorizontalAlignment(SwingConstants.CENTER);
 		TipoUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		TipoUsuario.setEditable(false);
 		TipoUsuario.setColumns(10);
 		TipoUsuario.setBorder(null);
-		TipoUsuario.setBackground(new Color(192, 192, 192));
+		TipoUsuario.setBackground(new Color(248, 248, 255));
 		TipoUsuario.setBounds(507, 100, 252, 19);
 		contentPane.add(TipoUsuario);
 		 
@@ -143,7 +143,7 @@ public class PantallaDireccionCursos extends JFrame {
 		btnMostrarResueltos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnMostrarResueltos.setForeground(new Color(0, 0, 0));
 		btnMostrarResueltos.setFont(new Font("Tahoma", Font.BOLD, 19));
-		btnMostrarResueltos.setBackground(new Color(0, 0, 255));
+		btnMostrarResueltos.setBackground(new Color(255, 182, 193));
 		btnMostrarResueltos.setBounds(7, 240, 244, 122);
 		btnMostrarResueltos.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
