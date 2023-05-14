@@ -70,7 +70,7 @@ public class PantallaEstudiante extends JFrame {
 		JButton btnMostrarPendientes = new JButton("Realizar matriculaci\u00F3n");
 		btnMostrarPendientes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnMostrarPendientes.setForeground(new Color(0, 0, 0));
-		btnMostrarPendientes.setBackground(new Color(0, 0, 255));
+		btnMostrarPendientes.setBackground(new Color(255, 182, 193));
 		btnMostrarPendientes.setFont(new Font("Tahoma", Font.BOLD, 19));
 		btnMostrarPendientes.setBounds(167, 281, 438, 99);
 		contentPane.add(btnMostrarPendientes);
