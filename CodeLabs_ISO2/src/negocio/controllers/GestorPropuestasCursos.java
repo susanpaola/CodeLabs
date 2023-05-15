@@ -49,44 +49,46 @@ public class GestorPropuestasCursos {
 	 */
 	public EstadoCurso evaluarPropuesta(CursoPropio curso) {
 		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
-		Vector<Object> res = null;
-		try {
-			String sql = "SELECT estado FROM CursoPropio WHERE id=" + curso.getId();
-			res = agenteCursoPropioDAO.seleccionarCursos(sql);
-			
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		
-		String estado = res.get(0).toString();
-		String charsToRemove = "[]";
-			 
+	    Vector<Object> res = null;
+	    try {
+	        String sql = "SELECT estado FROM CursoPropio WHERE id=" + curso.getId();
+	        res = agenteCursoPropioDAO.seleccionarCursos(sql);
+	    } catch (Exception e) {
+	        System.out.println(e);
+	    }
+
+	    if (res != null && !res.isEmpty()) {
+	        String estado = res.get(0).toString();
+	        String charsToRemove = "[]";
 	        for (char c : charsToRemove.toCharArray()) {
 	            estado = estado.replace(String.valueOf(c), "");
-		}
-		
-		EstadoCurso ec = null;
-		switch(estado) {
-			case "PROPUESTO":
-				ec = EstadoCurso.PROPUESTO;
-				break;
-			case "VALIDADO":
-				ec = EstadoCurso.VALIDADO;
-				break;
-			case "PROPUESTA_RECHAZADA":
-				ec = EstadoCurso.PROPUESTA_RECHAZADA;
-				break;
-			case "EN_MATRICULACION":
-				ec = EstadoCurso.EN_MATRICULACION;
-				break;
-			case "EN_IMPARTIZICION":
-				ec = EstadoCurso.EN_IMPARTIZICION;
-				break;
-			case "TERMINADO":
-				ec = EstadoCurso.TERMINADO;
-				break;
-		}
-		return ec;
+	        }
+
+	        EstadoCurso ec = null;
+	        switch (estado) {
+	            case "PROPUESTO":
+	                ec = EstadoCurso.PROPUESTO;
+	                break;
+	            case "VALIDADO":
+	                ec = EstadoCurso.VALIDADO;
+	                break;
+	            case "PROPUESTA_RECHAZADA":
+	                ec = EstadoCurso.PROPUESTA_RECHAZADA;
+	                break;
+	            case "EN_MATRICULACION":
+	                ec = EstadoCurso.EN_MATRICULACION;
+	                break;
+	            case "EN_IMPARTIZICION":
+	                ec = EstadoCurso.EN_IMPARTIZICION;
+	                break;
+	            case "TERMINADO":
+	                ec = EstadoCurso.TERMINADO;
+	                break;
+	        }
+	        return ec;
+	    } else {
+	        throw new RuntimeException("No se encontró ningún resultado para la consulta: " + curso.getId());
+	    }
 	}
 
 	/**
