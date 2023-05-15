@@ -20,11 +20,11 @@ public class MatriculaDAO {
 		return this.agenteBD;	
 	}
 	
-	public int insertMatricula(String sql) {
+	public int insertMatricula(String sql) throws Exception {
 		return agenteBD.insert(sql);
 	}
 	
-	public int deleteMatricula(String sql) {
+	public int deleteMatricula(String sql) throws Exception {
 		return agenteBD.delete(sql);
 	}
 	

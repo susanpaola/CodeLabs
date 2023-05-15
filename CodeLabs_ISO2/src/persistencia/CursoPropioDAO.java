@@ -25,7 +25,7 @@ public class CursoPropioDAO{
 	}
 
 	//insertar curso
-	public int insertarCurso(String sql) {
+	public int insertarCurso(String sql) throws Exception {
 		return agenteBD.insert(sql);
 	}
 	

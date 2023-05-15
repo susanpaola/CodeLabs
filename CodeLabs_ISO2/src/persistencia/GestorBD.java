@@ -38,19 +38,21 @@ public class GestorBD {
 	/**
 	 * Metodo insertar
 	 * @param sql
+	 * @throws Exception 
 	 */
-	public  int insert(String SQL) {
+	public  int insert(String SQL) throws Exception {
 		int res = -1;
-		try {
-			connect();
-			PreparedStatement stmt = mBD.prepareStatement(SQL);
-			res = stmt.executeUpdate(SQL);
-			stmt.close();
-			disconnect();
-		} catch (Exception e) {
-			System.out.println(e);
-		} 
-		return res;
+	    try {
+	        connect();
+	        try (PreparedStatement stmt = mBD.prepareStatement(SQL)) {
+	            res = stmt.executeUpdate(SQL);
+	        }
+	    } catch (Exception e) {
+	        System.out.println(e);
+	    } finally {
+	        disconnect();
+	    }
+	    return res;
 	}
 
 	/**
@@ -91,29 +93,32 @@ public class GestorBD {
 	 */
 	public int update(String SQL) throws SQLException, Exception {
 		connect();
-		PreparedStatement stmt = mBD.prepareStatement(SQL);
-		int res = stmt.executeUpdate(SQL);
-		stmt.close();
-		disconnect();
-		return res;
+	    int res = -1;
+	    try (PreparedStatement stmt = mBD.prepareStatement(SQL)) {
+	        res = stmt.executeUpdate(SQL);
+	    }
+	    disconnect();
+	    return res;
 	}
 
 	/**
 	 * Metodo eliminar
 	 * @param sql
+	 * @throws Exception 
 	 */
-	public int delete(String SQL) {
+	public int delete(String SQL) throws Exception {
 		int res = -1;
-		try {
-			connect();
-			PreparedStatement stmt = mBD.prepareStatement(SQL);
-			res = stmt.executeUpdate(SQL);
-			stmt.close();
-			disconnect();
-		} catch (Exception e) {
-			System.out.println(e);
-		} 
-		return res;
+	    try {
+	        connect();
+	        try (PreparedStatement stmt = mBD.prepareStatement(SQL)) {
+	            res = stmt.executeUpdate(SQL);
+	        }
+	    } catch (Exception e) {
+	        System.out.println(e);
+	    } finally {
+	        disconnect();
+	    }
+	    return res;
 	}
 
 	public static GestorBD getAgente() throws Exception {
