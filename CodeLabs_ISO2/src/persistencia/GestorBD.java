@@ -63,27 +63,27 @@ public class GestorBD {
 	public Vector<Object>  select(String SQL) throws Exception {
 		
 		Vector<Object> vectoradevolver = new Vector<Object>();
-		connect();
-		Statement stmt = mBD.createStatement();
-		ResultSet res = stmt.executeQuery(SQL);
-		ResultSetMetaData rsmd = res.getMetaData();
-		int columns = rsmd.getColumnCount();
-	
-		while (res.next()) {
-			Vector<Object> v = new Vector<Object>();
-			for(int i=1; i<=columns; i++) {
-				try {
-					v.add(res.getObject(i));
-				}
-				catch(SQLException ex) {
-					continue;
-				}
-			}
-			vectoradevolver.add(v);
-		}
-		stmt.close();
-		disconnect();
-		return vectoradevolver;
+	    connect();
+	    try (Statement stmt = mBD.createStatement(); ResultSet res = stmt.executeQuery(SQL)) {
+	        ResultSetMetaData rsmd = res.getMetaData();
+	        int columns = rsmd.getColumnCount();
+
+	        while (res.next()) {
+	            Vector<Object> v = new Vector<Object>();
+	            for (int i = 1; i <= columns; i++) {
+	                try {
+	                    v.add(res.getObject(i));
+	                } catch (SQLException ex) {
+	                    continue;
+	                }
+	            }
+	            vectoradevolver.add(v);
+	        }
+	    } catch (SQLException e) {
+	        System.out.println(e);
+	    }
+	    disconnect();
+	    return vectoradevolver;
 	}
 	
 
