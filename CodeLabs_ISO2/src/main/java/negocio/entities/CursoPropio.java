@@ -1,6 +1,7 @@
 package negocio.entities;
 
 import java.util.*;
+
 import persistencia.*;
 
 

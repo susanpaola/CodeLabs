@@ -21,9 +21,6 @@ import javax.swing.table.DefaultTableModel;
 
 import negocio.controllers.GestorConsultas;
 import negocio.controllers.GestorMatriculacion;
-
-//import com.jgoodies.forms.factories.DefaultComponentFactory;
-
 import negocio.entities.Matricula;
 import negocio.entities.ModoPago;
 import persistencia.GestorBD;
