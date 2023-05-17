@@ -11,6 +11,8 @@ public class GestorMatriculacion {
 	 * @param estudiante
 	 * @param matricula
 	 */
+	
+	//CursoPropio curso, Estudiante estudiante, 
 	public int realizarMatriculacion(CursoPropio curso, Estudiante estudiante, Matricula matricula) {
 		// TODO - implement GestorMatriculacion.realizarMatriculacion
 		MatriculaDAO agenteMatriculaDAO = new MatriculaDAO();
@@ -55,7 +57,8 @@ public class GestorMatriculacion {
 	 * @param curso
 	 * @param estudiante
 	 */
-	private void realizarPagoTarjeta(CursoPropio curso, Estudiante estudiante) {
+	//private
+	void realizarPagoTarjeta(CursoPropio curso, Estudiante estudiante) {
 		// TODO - implement GestorMatriculacion.realizarPagoTarjeta
 		throw new UnsupportedOperationException();
 	}
@@ -65,7 +68,8 @@ public class GestorMatriculacion {
 	 * @param curso
 	 * @param estudiante
 	 */
-	private void realizarPagoTransferencia(CursoPropio curso, Estudiante estudiante) {
+	//private
+	void realizarPagoTransferencia(CursoPropio curso, Estudiante estudiante) {
 		// TODO - implement GestorMatriculacion.realizarPagoTransferencia
 		throw new UnsupportedOperationException();
 	}
@@ -74,5 +78,6 @@ public class GestorMatriculacion {
 		// TODO - implement GestorMatriculacion.operation
 		throw new UnsupportedOperationException();
 	}
+
 
 }
