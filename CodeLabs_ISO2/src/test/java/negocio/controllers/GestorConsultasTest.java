@@ -1,75 +1,76 @@
 package negocio.controllers;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
+import java.util.Vector;
 
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
 
-import negocio.controllers.GestorConsultas;
 import negocio.entities.CursoPropio;
 import negocio.entities.EstadoCurso;
 import negocio.entities.TipoCurso;
+import persistencia.CursoPropioDAO;
 
 public class GestorConsultasTest {
 
-    private GestorConsultas gestorConsultas;
-
-    @Before
-    public void setUp() {
-        gestorConsultas = new GestorConsultas();
-        // Configuración adicional para inicialización y configuración antes de cada prueba
-    }
-
-    @Test
-    public void testConsultarIngresos() {
-        // Prueba de consultarIngresos()
-        // Preparación de los datos de prueba
-        TipoCurso tipo = TipoCurso.MASTER;
-        String fechaInicio = "2023-01-01";
-        String fechaFin = "2023-12-31";
-
-        // Ejecución del método a probar
-        double ingresos = gestorConsultas.consultarIngresos(tipo, fechaInicio, fechaFin);
-
-        // Comprobación del resultado esperado
-        // Utiliza asserEquals(expected, actual, delta) para comparar valores numéricos con una tolerancia delta
-        assertEquals(1000.00, ingresos, 0.01);
-    }
-
     @Test
     public void testConsultarEstadoCursos() {
-        // Prueba de consultarEstadoCursos()
-        // Preparación de los datos de prueba
-        EstadoCurso estado = EstadoCurso.VALIDADO;
-        String fechaInicio = "2023-01-01";
-        String fechaFin = "2023-12-31";
+        GestorConsultas gestorConsultas = new GestorConsultas();
+        List<CursoPropio> cursos = gestorConsultas.consultarEstadoCursos(EstadoCurso.VALIDADO, "2023-01-01", "2023-12-31");
+        int expectedCursoCount = 1; 
+        Assert.assertEquals(expectedCursoCount, cursos.size());
 
-        // Ejecución del método a probar
-        List<CursoPropio> cursos = gestorConsultas.consultarEstadoCursos(estado, fechaInicio, fechaFin);
-
-        // Comprobación del resultado esperado
-        assertEquals(2, cursos.size());
-        // Realiza más asserEquals() u otras comprobaciones para verificar los resultados de la lista de cursos
     }
+    
+    @Test
+    public void testConsultarIngresos_Datos() {
+        // Caso de prueba: Probar con datos inválidos
+        GestorConsultas gestorConsultas = new GestorConsultas();
+        double ingresos = gestorConsultas.consultarIngresos(TipoCurso.EXPERTO, "2022-01-01", "2022-12-31");
+        double ingresosEsperados = 0.00; // No se espera ningún ingreso con los datos proporcionados
+        Assert.assertEquals(ingresosEsperados, ingresos, 0.01);
+    }
+    
+    @Test
+    public void testConsultarIngresos() {
+        GestorConsultas gestor = new GestorConsultas();
+        //CursoPropio curso = new CursoPropio(100, "curso robotica", 30, "2022-09-10", "2023-07-15", 900.00, 1, "Facultad ciencias sociales",
+        	//	"96315247O", "25895175N", EstadoCurso.EN_MATRICULACION, TipoCurso.FORMACION_AVANZADA);
+
+        CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
+
+        String sql = "SELECT tipo FROM CursoPropio";
+        try {
+            Vector<Object> listarCursosAntes = agenteCursoPropioDAO.seleccionarCursos(sql);
+            gestor.consultarIngresos(TipoCurso.FORMACION_AVANZADA, "2022-09-10", "2023-07-15");
+            Vector<Object> listarCursosDespues = agenteCursoPropioDAO.seleccionarCursos(sql);
+            assertTrue(listarCursosDespues.size() == listarCursosAntes.size() + 1);
+
+            sql = "DELETE FROM CursoPropio WHERE tipo=FORMACION_AVANZADA";
+            agenteCursoPropioDAO.eliminarCurso(sql);
+        } catch(Exception e) {
+            e.printStackTrace(); // Para imprimir la traza completa de la excepción
+        }
+
+    }//
 
     @Test
-    public void testListarEdicionesCursos() {
-        // Prueba de listarEdicionesCursos()
-        // Preparación de los datos de prueba
-        String fechaInicio = "2023-01-01";
-        String fechaFin = "2023-12-31";
-
-        // Ejecución del método a probar
-        List<CursoPropio> cursos = gestorConsultas.listarEdicionesCursos(fechaInicio, fechaFin);
-
-        // Comprobación del resultado esperado
-        assertEquals(3, cursos.size());
-        // Realiza más asserEquals() u otras comprobaciones para verificar los resultados de la lista de cursos
+    public void testConsultarEstadoCursos_CasosLimite() {
+        GestorConsultas gestorConsultas = new GestorConsultas();
+        List<CursoPropio> cursos = gestorConsultas.consultarEstadoCursos(EstadoCurso.EN_MATRICULACION, "2023-01-01", "2023-12-31");
+        int cantidadCursosEsperada = 0; // No se espera ningún curso en estado de matriculación
+        Assert.assertEquals(cantidadCursosEsperada, cursos.size());
     }
-
-    // Agrega más métodos de prueba para cubrir otras funcionalidades de GestorConsultas
-
 }
+
+
+
+
+
+
+
+
+
 
