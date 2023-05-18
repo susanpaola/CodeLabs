@@ -38,7 +38,7 @@ public class CentroTest {
 		Assert.assertEquals("Toledo", centro.getLocalizacion());
 		Assert.assertEquals(456, centro.getAttribute());
 	}
-
+ 
 	@Test
 	public void testPlantilla() {
 		Centro centro = new Centro("Facultad de ciencias sociales", "Talavera de la Reina", 123);
