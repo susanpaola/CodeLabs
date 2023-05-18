@@ -51,8 +51,8 @@ public class GestorConsultasTest {
             sql = "DELETE FROM CursoPropio WHERE tipo=FORMACION_AVANZADA";
             agenteCursoPropioDAO.eliminarCurso(sql);
         } catch(Exception e) {
-            e.printStackTrace(); // Para imprimir la traza completa de la excepción
-        }
+	            e.printStackTrace(); // Para imprimir el error
+	        }
 
     }//
 
