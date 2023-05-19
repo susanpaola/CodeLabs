@@ -56,7 +56,7 @@ public class GestorPropuestasCursos {
 	    } catch (Exception e) {
 	        System.out.println(e);
 	    }
-
+ 
 	    if (res != null && !res.isEmpty()) {
 	        String estado = res.get(0).toString();
 	        String charsToRemove = "[]";
