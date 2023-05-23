@@ -14,6 +14,7 @@ import java.awt.event.FocusListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -546,8 +547,8 @@ mostrarFechas();
 		
 	}
 	public int numRand() {
-		int numero = (int)(Math.random()*100+1);
-		return numero;
+		SecureRandom secureRandom = new SecureRandom();
+        return secureRandom.nextInt(100) + 1;
 	}
 	public class DateLabelFormatter extends AbstractFormatter {
 
