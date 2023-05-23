@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.sql.Date;
@@ -196,8 +197,8 @@ public class PantallaMatricula extends JFrame {
 	}
 	
 	public int numRand() {
-		int numero = (int)(Math.random()*100+1);
-		return numero;
+		SecureRandom secureRandom = new SecureRandom();
+        return secureRandom.nextInt(100) + 1;
 	}
 
 }
