@@ -6,6 +6,9 @@ import negocio.entities.*;
 import persistencia.CursoPropioDAO;
 
 public class GestorPropuestasCursos {
+	
+	private static final String WHERE_ID = "' WHERE id=";
+
 
 	public void realizarPropuestaCurso(CursoPropio curso) {
 		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
@@ -27,7 +30,8 @@ public class GestorPropuestasCursos {
 		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
 		if (tipo == 0) { //edita todo
 			try {
-				String sql = "UPDATE CursoPropio SET nombre='" + curso.getNombre() + "', ECTS=" + curso.getECTS() + ", fechaIni='" + curso.getFechaInicio() + "', fechaFin='" + curso.getFechaFin() + "', tasa=" + curso.getTasaMatricula() + ", edicion=" + curso.getEdicion() + ", centro='" + curso.getCentro() + "', director='" + curso.getDirector() + "', secretario='" + curso.getSecretario() + "', estado='" + curso.getEstadoCurso().toString() + "', tipo='" + curso.getTipoCurso().toString() + "' WHERE id=" + curso.getId();
+	            String sql = "UPDATE CursoPropio SET nombre='" + curso.getNombre() + "', ECTS=" + curso.getECTS() + ", fechaIni='" + curso.getFechaInicio() + "', fechaFin='" + curso.getFechaFin() + "', tasa=" + curso.getTasaMatricula() + ", edicion=" + curso.getEdicion() + ", centro='" + curso.getCentro() + "', director='" + curso.getDirector() + "', secretario='" + curso.getSecretario() + "', estado='" + curso.getEstadoCurso().toString() + "', tipo='" + curso.getTipoCurso().toString() + WHERE_ID + curso.getId();	   
+
 				agenteCursoPropioDAO.editarCurso(sql);
 			
 			} catch (Exception e) {
@@ -35,7 +39,8 @@ public class GestorPropuestasCursos {
 			}  	
 		} else { //edita sólo el curso
 			try {
-				String sql = "UPDATE CursoPropio SET estado='" + curso.getEstadoCurso().toString() + "' WHERE id=" + curso.getId();
+				String sql = "UPDATE CursoPropio SET estado='" + curso.getEstadoCurso().toString() +
+	                    WHERE_ID + curso.getId();
 				agenteCursoPropioDAO.editarCurso(sql);
 			} catch (Exception e) {
 				System.out.println(e);
@@ -84,6 +89,10 @@ public class GestorPropuestasCursos {
 	            case "TERMINADO":
 	                ec = EstadoCurso.TERMINADO;
 	                break;
+	            default:
+	                // Manejar el caso por defecto, lanzar una excepción o asignar un valor predeterminado según sea necesario.
+	                // Por ejemplo, puedes lanzar una excepción:
+	                throw new IllegalArgumentException("Estado no reconocido: " + estado);
 	        }
 	        return ec;
 	    } else {
@@ -99,7 +108,8 @@ public class GestorPropuestasCursos {
 		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
 		
 		try {
-			String sql = "UPDATE CursoPropio SET estado='" + curso.getEstadoCurso().toString() + "' WHERE id=" + curso.getId();
+			String sql = "UPDATE CursoPropio SET estado='" + curso.getEstadoCurso().toString() +
+	                WHERE_ID + curso.getId();
 			agenteCursoPropioDAO.editarCurso(sql);
 			
 		} catch (Exception e) {

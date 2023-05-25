@@ -123,6 +123,10 @@ public class GestorConsultas {
 				case "CORTA_DURACION":
 					tipo = TipoCurso.CORTA_DURACION;
 					break;
+				default:
+			        // Manejar el caso por defecto, lanzar una excepción o asignar un valor predeterminado según sea necesario.
+			        // Por ejemplo, puedes lanzar una excepción:
+			        throw new IllegalArgumentException("Tipo de curso no reconocido: " + tipoCurso);
 			}
 			
 			CursoPropio cursoCreado = new CursoPropio(id, nombre, ECTS, fechaIni, fechaFinParts, tasa, edicion, centro, director, secretario, estado, tipo);
@@ -192,6 +196,10 @@ public class GestorConsultas {
 				case "TERMINADO":
 					estado = EstadoCurso.TERMINADO;
 					break;
+				default:
+			        // Manejar el caso por defecto, lanzar una excepción o asignar un valor predeterminado según sea necesario.
+			        // Por ejemplo, puedes lanzar una excepción:
+			        throw new IllegalArgumentException("Estado de curso no reconocido: " + estadoCurso);
 			}
 			
 			TipoCurso tipo = null;
@@ -217,6 +225,10 @@ public class GestorConsultas {
 				case "CORTA_DURACION":
 					tipo = TipoCurso.CORTA_DURACION;
 					break;
+				default:
+			        // Manejar el caso por defecto, lanzar una excepción o asignar un valor predeterminado según sea necesario.
+			        // Por ejemplo, puedes lanzar una excepción:
+			        throw new IllegalArgumentException("Tipo de curso no reconocido: " + tipoCurso);	
 			}
 			
 			CursoPropio cursoCreado = new CursoPropio(id, nombre, ECTS, fechaIni, fechaFinParts, tasa, edicion, centro, director, secretario, estado, tipo);
