@@ -47,10 +47,10 @@ public class Matricula {
 	public ModoPago getTipoPago() {
 		return tipoPago;
 	}
-	public void setTipoPago(ModoPago tipoPago) {
+	/*public void setTipoPago(ModoPago tipoPago) {
 		//Matricula.tipoPago = tipoPago;
 		this.tipoPago = tipoPago;
-	}
+	}*/
 	public String getFecha() {
 		return fecha;
 	}

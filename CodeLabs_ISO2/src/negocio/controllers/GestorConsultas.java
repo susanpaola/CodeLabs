@@ -8,7 +8,9 @@ import negocio.entities.*;
 import persistencia.CursoPropioDAO;
 
 public class GestorConsultas {
-
+	
+	private static final String AND_FECHAFIN = "' AND fechaFin <='";
+	
 	/**
 	 * 
 	 * @param tipo
@@ -19,7 +21,8 @@ public class GestorConsultas {
 		double ganancia = 0.00;
 		String charsToRemove = "[] ";
 			
-		String sql = "SELECT * FROM CursoPropio WHERE tipo='" + tipo.toString() + "' AND fechaIni >='" + fechaInicio + "' AND fechaFin <='" + fechaFin + "' AND estado='VALIDADO'";
+		String sql = "SELECT * FROM CursoPropio WHERE tipo='" + tipo.toString() + "' AND fechaIni >='" + fechaInicio +
+	            AND_FECHAFIN + fechaFin + "' AND estado='VALIDADO'";
 		Vector<Object> vectorCursos = new Vector<Object>();
 		CursoPropioDAO cursoDAO = new CursoPropioDAO();
 		try {
@@ -70,7 +73,9 @@ public class GestorConsultas {
 	public List<CursoPropio> consultarEstadoCursos(EstadoCurso estado, String fechaInicio, String fechaFin) {
 		String charsToRemove = "[] ";
 		List<CursoPropio> listaEstadoCurso = new ArrayList<>();
-		String sql = "SELECT * FROM CursoPropio WHERE estado='" + estado.toString() + "' AND fechaIni >='" + fechaInicio + "' AND fechaFin <='" + fechaFin + "'";
+		 String sql = "SELECT * FROM CursoPropio WHERE estado='" + estado.toString() + "' AND fechaIni >='" + fechaInicio +
+		            AND_FECHAFIN + fechaFin + "'";	
+		 
 		Vector<Object> vectorCursos = new Vector<Object>();
 		CursoPropioDAO cursoDAO = new CursoPropioDAO();
 		try {
@@ -146,7 +151,9 @@ public class GestorConsultas {
 		CursoPropioDAO cursoDAO = new CursoPropioDAO();
 		
 		String charsToRemove = "[] ";
-		String sql = "SELECT * FROM CursoPropio WHERE fechaIni >='" + fechaInicio + "' AND fechaFin <='" + fechaFin + "'";
+		String sql = "SELECT * FROM CursoPropio WHERE fechaIni >='" + fechaInicio +
+	            AND_FECHAFIN + fechaFin + "'";
+		
 		Vector<Object> vectorCursos = new Vector<Object>();
 		try {
 			vectorCursos = cursoDAO.seleccionarCursos(sql);
