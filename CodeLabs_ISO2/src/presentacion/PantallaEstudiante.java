@@ -27,6 +27,7 @@ import java.util.Vector;
 import java.awt.Cursor;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 
 public class PantallaEstudiante extends JFrame {
 	
@@ -58,7 +59,7 @@ public class PantallaEstudiante extends JFrame {
 	public PantallaEstudiante() {
 		setTitle("UCLM");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(176, 224, 230));

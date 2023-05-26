@@ -49,6 +49,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.AbstractListModel;
 import javax.swing.ListSelectionModel;
+import javax.swing.WindowConstants;
 import javax.swing.JFormattedTextField.AbstractFormatter;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -113,7 +114,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 	public PantallaRealizarPropuesta() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 		setTitle("UCLM\r\n");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 770, 618);
 		contentPane = new JPanel();
 		contentPane.setFont(new Font(tipoLetra, Font.BOLD, 15));

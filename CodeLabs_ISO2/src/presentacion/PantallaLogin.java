@@ -37,6 +37,8 @@ import javax.swing.SwingConstants;
 import java.awt.Panel;
 import java.awt.BorderLayout;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
+
 import java.awt.Canvas;
 import java.awt.Toolkit;
 
@@ -59,7 +61,7 @@ public class PantallaLogin  {
 			frmUclm.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 			frmUclm.setTitle("UCLM");
 			frmUclm.setSize(625, 428);
-			frmUclm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frmUclm.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 			JPanel panel = new JPanel();
 			panel.setBackground(new Color(176, 224, 230));

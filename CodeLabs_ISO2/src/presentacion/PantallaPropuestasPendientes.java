@@ -28,6 +28,8 @@ import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
+import javax.swing.WindowConstants;
+
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.SystemColor;
@@ -58,7 +60,7 @@ public class PantallaPropuestasPendientes extends JFrame {
 	public PantallaPropuestasPendientes() throws Exception {
 		setTitle("UCLM");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(176, 224, 230));
