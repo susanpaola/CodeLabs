@@ -1,4 +1,3 @@
-
 package negocio.entities;
 
 import static org.junit.Assert.*;
@@ -44,4 +43,3 @@ public class CursoPropioTest {
     }
 */
 }
-
