@@ -5,16 +5,11 @@ import negocio.entities.EstadoCurso;
 import negocio.entities.TipoCurso;
 import persistencia.CursoPropioDAO;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Vector;
 
 public class GestorPropuestasCursosTest {
-
-
-
 	@Test
 	public void realizarPropuestaCursoTest() {
 		// Crear instancia del DAO para acceder a la capa de persistencia
@@ -166,8 +161,5 @@ public class GestorPropuestasCursosTest {
 		}
 	}
 }
-
-
-
 
 
