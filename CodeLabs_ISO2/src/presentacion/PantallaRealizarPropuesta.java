@@ -59,6 +59,8 @@ import javax.swing.border.MatteBorder;
 import java.awt.Panel;
 
 public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
+	
+	private static final String MASTER_FORMACION_PERMANENTE = "Master de Formación Permanente";
 
 	protected JPanel contentPane;
 	protected JTextField NombreCurso;
@@ -85,7 +87,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 	protected JLabel lblDuracinDelCurso;
 	protected JComboBox comboBox;
 	presentacion.PantallaDireccionCursos p = new presentacion.PantallaDireccionCursos();
-	CursoPropio curso;
+	private transient CursoPropio curso;
 	private String tipoLetra= "Tahoma";
 	private String ERROR= "ERROR";
 
@@ -235,57 +237,59 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		
 		btnFinalizar.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (datePickerFin.getJFormattedTextField().getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "Introduzca los campos necesarios.", ERROR, JOptionPane.ERROR_MESSAGE);
-				}
-				else {
-					
-				
-				int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea enviar su propuesta de curso?", "ATENCIÓN", JOptionPane.OK_CANCEL_OPTION);
-				if (respuesta == JOptionPane.OK_OPTION) {
-					JOptionPane.showMessageDialog(null, "Su propuesta ha sido enviada de manera correcta.", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+			    if (datePickerFin.getJFormattedTextField().getText().equals("")) {
+			        JOptionPane.showMessageDialog(null, "Introduzca los campos necesarios.", ERROR, JOptionPane.ERROR_MESSAGE);
+			    } else {
+			        int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea enviar su propuesta de curso?", "ATENCIÓN", JOptionPane.OK_CANCEL_OPTION);
+			        if (respuesta == JOptionPane.OK_OPTION) {
+			            JOptionPane.showMessageDialog(null, "Su propuesta ha sido enviada de manera correcta.", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
 
-					p.setVisible(true);
-					p.TipoUsuario.setText(CategoriaProf.getText());
-					p.NombreUsu.setText(NombreProf.getText());
-					setVisible(false);
-					try {
-						EstadoCurso estado= EstadoCurso.PROPUESTO;
-						TipoCurso tipo = null;
-						switch(c) {
-						case "Master de Formación Permanente":
-							tipo = TipoCurso.MASTER;
-							break;
-						case "Diploma de Experto":
-							tipo = TipoCurso.EXPERTO;
-							break;
-						case "Especialización":
-							tipo = TipoCurso.ESPECIALISTA;
-							break;
-						case "Curso de Formacion Avanzada":
-							tipo = TipoCurso.FORMACION_AVANZADA;
-							break;
-						case "Curso de Formacion Continua":
-							tipo = TipoCurso.FORMACION_CONTINUA;
-							break;
-						case "Microcredenciales":
-							tipo = TipoCurso.MICROCREDENCIALES;
-							break;
-						case "Actividades de Corta Duración":
-							tipo = TipoCurso.CORTA_DURACION;
-							break;
-					}
-						
-					curso = new CursoPropio(numRand(), NombreCurso.getText(), Integer.parseInt(NumCreditos.getText()), datePickerFin.getJFormattedTextField().getText(), datePickerFin.getJFormattedTextField().getText(), Double.parseDouble(textPrecio.getText()), Integer.parseInt(Edicion.getText()), Facultad.getText(), NombreProf.getText(), CategoriaProf.getText(), estado, tipo);
-					GestorPropuestasCursos gestorCursos = new GestorPropuestasCursos();
-					gestorCursos.realizarPropuestaCurso(curso);
-						 } catch (NumberFormatException e1) {
-						e1.printStackTrace();
-					}
-				
-				}
-				
-				}}
+			            p.setVisible(true);
+			            p.TipoUsuario.setText(CategoriaProf.getText());
+			            p.NombreUsu.setText(NombreProf.getText());
+			            setVisible(false);
+			            try {
+			                EstadoCurso estado = EstadoCurso.PROPUESTO;
+			                TipoCurso tipo = null;
+			                switch (c) {
+			                    case "Master de Formación Permanente":
+			                        tipo = TipoCurso.MASTER;
+			                        break;
+			                    case "Diploma de Experto":
+			                        tipo = TipoCurso.EXPERTO;
+			                        break;
+			                    case "Especialización":
+			                        tipo = TipoCurso.ESPECIALISTA;
+			                        break;
+			                    case "Curso de Formacion Avanzada":
+			                        tipo = TipoCurso.FORMACION_AVANZADA;
+			                        break;
+			                    case "Curso de Formacion Continua":
+			                        tipo = TipoCurso.FORMACION_CONTINUA;
+			                        break;
+			                    case "Microcredenciales":
+			                        tipo = TipoCurso.MICROCREDENCIALES;
+			                        break;
+			                    case "Actividades de Corta Duración":
+			                        tipo = TipoCurso.CORTA_DURACION;
+			                        break;
+			                    default:
+			                        // Bloque de código para el caso predeterminado (ningún caso coincide)
+			                        JOptionPane.showMessageDialog(null, "Opción no válida", "Error", JOptionPane.ERROR_MESSAGE);
+			                        break;
+			                }
+
+			                curso = new CursoPropio(numRand(), NombreCurso.getText(), Integer.parseInt(NumCreditos.getText()), datePickerFin.getJFormattedTextField().getText(), datePickerFin.getJFormattedTextField().getText(), Double.parseDouble(textPrecio.getText()), Integer.parseInt(Edicion.getText()), Facultad.getText(), NombreProf.getText(), CategoriaProf.getText(), estado, tipo);
+			                GestorPropuestasCursos gestorCursos = new GestorPropuestasCursos();
+			                gestorCursos.realizarPropuestaCurso(curso);
+			            } catch (NumberFormatException e1) {
+			                e1.printStackTrace();
+			            }
+
+			        }
+
+			    }
+			}
 			
 		});
 		
@@ -514,6 +518,11 @@ mostrarFechas();
 
 	    	} 
 	    	break;
+	    default:
+	        // Bloque de código para el caso predeterminado (ningún caso coincide)
+	        // Puedes mostrar un mensaje de error o realizar alguna acción por defecto
+	        JOptionPane.showMessageDialog(null, "Opción no válida", "Error", JOptionPane.ERROR_MESSAGE);
+	        break;
 	  }
 		
 	}

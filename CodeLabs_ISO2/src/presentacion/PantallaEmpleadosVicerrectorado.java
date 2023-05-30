@@ -31,12 +31,12 @@ import javax.swing.WindowConstants;
 
 public class PantallaEmpleadosVicerrectorado extends JFrame {
 
-
+	private static final String FONT_TAHOMA = "Tahoma";
 
 	private JPanel contentPane;
 	protected JTextField NombreUsu;
 	protected JTextField TipoUsuario;
-	presentacion.PantallaLogin p = new presentacion.PantallaLogin();
+	private transient presentacion.PantallaLogin p = new presentacion.PantallaLogin();
 
 	/**
 	 * Launch the application.
@@ -71,7 +71,7 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 		JButton btnRealizarPropuesta = new JButton("Evaluar Propuestas Disponibles");
 		btnRealizarPropuesta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRealizarPropuesta.setForeground(new Color(0, 0, 0));
-		btnRealizarPropuesta.setFont(new Font("Tahoma", Font.BOLD, 19));
+		btnRealizarPropuesta.setFont(new Font(FONT_TAHOMA, Font.BOLD, 19));
 		btnRealizarPropuesta.setBackground(new Color(255, 182, 193));
 		btnRealizarPropuesta.setBounds(86, 266, 604, 99);
 		contentPane.add(btnRealizarPropuesta);
@@ -102,7 +102,7 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 		
 		NombreUsu = new JTextField();
 		NombreUsu.setHorizontalAlignment(SwingConstants.RIGHT);
-		NombreUsu.setFont(new Font("Tahoma", Font.BOLD, 15));
+		NombreUsu.setFont(new Font(FONT_TAHOMA, Font.BOLD, 15));
 		NombreUsu.setText("NOMBRE");
 		NombreUsu.setEditable(false);
 		NombreUsu.setColumns(10);
@@ -114,7 +114,7 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 		
 		TipoUsuario = new JTextField();
 		TipoUsuario.setHorizontalAlignment(SwingConstants.RIGHT);
-		TipoUsuario.setFont(new Font("Tahoma", Font.BOLD, 15));
+		TipoUsuario.setFont(new Font(FONT_TAHOMA, Font.BOLD, 15));
 		TipoUsuario.setText("TIPO USUARIO\r\n");
 		TipoUsuario.setEditable(false);
 		TipoUsuario.setColumns(10);
