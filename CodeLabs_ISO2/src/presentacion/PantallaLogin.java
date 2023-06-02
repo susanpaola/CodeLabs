@@ -73,6 +73,8 @@ public class PantallaLogin  {
 			JButton loginButton = new JButton("Iniciar sesi\u00F3n");
 			loginButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					// TODO: Agregar un comentario explicando por qué el método está vacío
+				    throw new UnsupportedOperationException("Método no implementado");
 				}
 			});
 			loginButton.hide();
@@ -235,7 +237,7 @@ public class PantallaLogin  {
 											 pa.CategoriaProf.setText(devolverTipo(UsuarioText.getText()));
 										 }
 										 else {
-											 JOptionPane.showMessageDialog(null, "El usuario o la contraseña son incorrectos. Por favor, introduzca correctamente los datos.", "ERROR", JOptionPane.ERROR_MESSAGE);
+											 JOptionPane.showMessageDialog(null, "El usuario o la contraseña son incorrectos. Por favor, introduzca correctamente los datos.", ERROR_MESSAGE, JOptionPane.ERROR_MESSAGE);
 											 frmUclm.dispose();
 											 PantallaLogin.mostrar();
 											

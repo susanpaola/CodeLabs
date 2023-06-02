@@ -47,8 +47,8 @@ import java.awt.Cursor;
 public class PantallaMatricula extends JFrame {
 
 	private JPanel contentPane;
-	MatriculaDAO mDAO = new MatriculaDAO ();
-	CursoPropioDAO cDAO = new CursoPropioDAO ();
+	private transient MatriculaDAO mDAO = new MatriculaDAO();
+	private transient CursoPropioDAO cDAO = new CursoPropioDAO ();
 	presentacion.PantallaRealizarPropuesta p = new presentacion.PantallaRealizarPropuesta();
 
 	/**
