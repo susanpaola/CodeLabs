@@ -1,6 +1,5 @@
 package negocio.entities;
 
-import static org.junit.Assert.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -32,8 +31,7 @@ public class MateriaTest {
     public void testMateriaConError() {
         // Crear objeto de la clase a probar sin inicializar el responsable (causará una excepción NullPointerException)
         Materia materia = new Materia(null, "Física", 3.5, "2023-02-01", "2023-05-31", 2);
-        
-        // El caso de prueba lanzará una excepción y se consider exitoso
+        // El caso de prueba lanzará una excepción y se considera exitoso
     }
     
 }

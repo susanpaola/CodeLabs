@@ -1,9 +1,5 @@
 package negocio.entities;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -31,7 +27,7 @@ public class ProfesorTest {
         String nombre = "Peter";
         String apellidos = "Dash";
         boolean doctor = true;
-        Profesor profesor = new Profesor(dni, nombre, apellidos, doctor);
+		Profesor profesor = new Profesor(dni, nombre, apellidos, doctor);
     }
     
     @Test

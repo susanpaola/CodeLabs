@@ -1,8 +1,5 @@
 package negocio.entities;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -23,6 +20,7 @@ public class ProfesorExternoTest {
         profesorExterno.setTitulacion("M.Sc");
         Assert.assertEquals("M.Sc", profesorExterno.getTitulacion());
     }
+    
     
     //CP Conjeura de error
     @Test(expected = NullPointerException.class)

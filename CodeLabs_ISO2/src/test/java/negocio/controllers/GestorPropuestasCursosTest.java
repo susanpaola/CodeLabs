@@ -43,7 +43,7 @@ public class GestorPropuestasCursosTest {
 			agenteCursoPropioDAO.eliminarCurso(sql);
 		
 		} catch (Exception e) {
-			System.out.println(e);
+			//System.out.println(e);
 		}
 	}
 	

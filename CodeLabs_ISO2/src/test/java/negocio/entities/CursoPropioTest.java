@@ -11,8 +11,8 @@ public class CursoPropioTest {
     @Before
     public void setUp() {
         // Configuración inicial para las pruebas
-        cursoPropio = new CursoPropio(1, "Curso de robotica", 3, "2023-01-01", "2023-06-30",
-                100.0, 1, "Centro de Prueba", "Director de Prueba", "Secretario de Prueba",
+        cursoPropio = new CursoPropio(1, "Curso de robotica", 30, "2023-01-01", "2023-07-28",
+                1200.0, 1, "Facultad de ciencias sociales", "96315247O", "25895175N",
                 EstadoCurso.VALIDADO, TipoCurso.CORTA_DURACION);
     }
 
@@ -33,6 +33,12 @@ public class CursoPropioTest {
         // Prueba para establecer el nombre del curso
         cursoPropio.setNombre("Curso cuantico");
         assertEquals("Curso cuantico", cursoPropio.getNombre());
+    }
+    
+    @Test
+    public void testToString() {
+        String expectedString = "CursoPropio [centro=Facultad de ciencias sociales, director=96315247O, estado=VALIDADO, tipo=CORTA_DURACION, id=1, nombre=Curso de robotica, ECTS=30, fechaInicio=2023-01-01, fechaFin=2023-07-28, tasaMatricula=1200.0, edicion=1]";
+        assertEquals(expectedString, cursoPropio.toString());
     }
 /*
  * 	//CP de conjetura de error
