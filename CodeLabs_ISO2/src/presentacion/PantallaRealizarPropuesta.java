@@ -542,7 +542,7 @@ mostrarFechas();
 	}
 	@Override
 	public void focusGained(FocusEvent e) {
-		
+		throw new UnsupportedOperationException("Método no implementado");		
 	}
 	@Override
 	public void focusLost(FocusEvent e) {
