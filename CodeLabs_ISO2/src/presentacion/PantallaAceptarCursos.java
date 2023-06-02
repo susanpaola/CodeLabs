@@ -86,7 +86,6 @@ public class PantallaAceptarCursos extends JFrame {
     		
 
 			public void actionPerformed(ActionEvent e) {
-				// TODO: Agregar un comentario explicando por qué el método está vacío
 			    throw new UnsupportedOperationException("Método no implementado");				
 				}});
 		contentPane.add(btnAceptar);

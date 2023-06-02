@@ -542,7 +542,6 @@ mostrarFechas();
 	}
 	@Override
 	public void focusGained(FocusEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 	@Override
@@ -553,7 +552,6 @@ mostrarFechas();
 			textPrecio.setText(a);
 		}
 	
-		// TODO Auto-generated method stub
 		
 	}
 	public int numRand() {

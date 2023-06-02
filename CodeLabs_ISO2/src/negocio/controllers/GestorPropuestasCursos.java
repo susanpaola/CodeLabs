@@ -28,7 +28,7 @@ public class GestorPropuestasCursos {
 	 */
 	public void editarPropuestaCurso(CursoPropio curso, int tipo) {
 		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
-		if (tipo == 0) { //edita todo
+		if (tipo == 0) { 
 			try {
 	            String sql = "UPDATE CursoPropio SET nombre='" + curso.getNombre() + "', ECTS=" + curso.getECTS() + ", fechaIni='" + curso.getFechaInicio() + "', fechaFin='" + curso.getFechaFin() + "', tasa=" + curso.getTasaMatricula() + ", edicion=" + curso.getEdicion() + ", centro='" + curso.getCentro() + "', director='" + curso.getDirector() + "', secretario='" + curso.getSecretario() + "', estado='" + curso.getEstadoCurso().toString() + "', tipo='" + curso.getTipoCurso().toString() + WHERE_ID + curso.getId();	   
 
@@ -37,7 +37,7 @@ public class GestorPropuestasCursos {
 			} catch (Exception e) {
 				System.out.println(e);
 			}  	
-		} else { //edita sólo el curso
+		} else {
 			try {
 				String sql = "UPDATE CursoPropio SET estado='" + curso.getEstadoCurso().toString() +
 	                    WHERE_ID + curso.getId();
@@ -90,8 +90,7 @@ public class GestorPropuestasCursos {
 	                ec = EstadoCurso.TERMINADO;
 	                break;
 	            default:
-	                // Manejar el caso por defecto, lanzar una excepción o asignar un valor predeterminado según sea necesario.
-	                // Por ejemplo, puedes lanzar una excepción:
+	                
 	                throw new IllegalArgumentException("Estado no reconocido: " + estado);
 	        }
 	        return ec;

@@ -73,7 +73,6 @@ public class PantallaLogin  {
 			JButton loginButton = new JButton("Iniciar sesi\u00F3n");
 			loginButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					// TODO: Agregar un comentario explicando por qué el método está vacío
 				    throw new UnsupportedOperationException("Método no implementado");
 				}
 			});
