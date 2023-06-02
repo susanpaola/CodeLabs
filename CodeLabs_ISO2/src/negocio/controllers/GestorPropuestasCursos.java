@@ -5,8 +5,12 @@ import java.util.Vector;
 import negocio.entities.*;
 import persistencia.CursoPropioDAO;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class GestorPropuestasCursos {
 	
+	private static final Logger logger = LoggerFactory.getLogger(GestorConsultas.class);
 	private static final String WHERE_ID = "' WHERE id=";
 
 
@@ -18,7 +22,7 @@ public class GestorPropuestasCursos {
 			agenteCursoPropioDAO.insertarCurso(sql);
 			
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error("Ocurrió una excepción: ", e);
 		}
 	}
 
@@ -35,7 +39,7 @@ public class GestorPropuestasCursos {
 				agenteCursoPropioDAO.editarCurso(sql);
 			
 			} catch (Exception e) {
-				System.out.println(e);
+				logger.error("Ocurrió una excepción: ", e);
 			}  	
 		} else {
 			try {
@@ -43,7 +47,7 @@ public class GestorPropuestasCursos {
 	                    WHERE_ID + curso.getId();
 				agenteCursoPropioDAO.editarCurso(sql);
 			} catch (Exception e) {
-				System.out.println(e);
+				logger.error("Ocurrió una excepción: ", e);
 			} 
 		}
 	}
@@ -59,7 +63,7 @@ public class GestorPropuestasCursos {
 	        String sql = "SELECT estado FROM CursoPropio WHERE id=" + curso.getId();
 	        res = agenteCursoPropioDAO.seleccionarCursos(sql);
 	    } catch (Exception e) {
-	        System.out.println(e);
+	    	logger.error("Ocurrió una excepción: ", e);
 	    }
 
 	    if (res != null && !res.isEmpty()) {
@@ -112,7 +116,7 @@ public class GestorPropuestasCursos {
 			agenteCursoPropioDAO.editarCurso(sql);
 			
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error("Ocurrió una excepción: ", e);
 		}
 	}
 

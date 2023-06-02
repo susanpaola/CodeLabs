@@ -32,22 +32,28 @@ public class ProfesorUCLM extends Profesor {
 	}
 	public void setCategoria(CategoriaProfesor categoria) {
 		this.categoria = categoria;
-	}
+	}	
+	@Override
 	public String getNombre() {
 		return nombre;
 	}
+	@Override
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	@Override
 	public String getApellidos() {
 		return apellidos;
 	}
+	@Override
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
+	@Override
 	public String getDni() {
 		return dni;
 	}
+	@Override
 	public void setDni(String dni) {
 		this.dni = dni;
 	}

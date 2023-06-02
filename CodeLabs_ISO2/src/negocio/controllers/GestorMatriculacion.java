@@ -3,7 +3,12 @@ package negocio.controllers;
 import negocio.entities.*;
 import persistencia.MatriculaDAO;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class GestorMatriculacion {
+	
+	private static final Logger logger = LoggerFactory.getLogger(GestorConsultas.class);
 
 	/**
 	 * 
@@ -19,7 +24,7 @@ public class GestorMatriculacion {
 			res = agenteMatriculaDAO.insertMatricula(sql);
 			
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error("Ocurrió una excepción: ", e);
 		}
 		
 		return res;
@@ -40,7 +45,7 @@ public class GestorMatriculacion {
 			res = agenteMatriculaDAO.updateMatricula(sql);
 			
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error("Ocurrió una excepción: ", e);
 		}
 		
 		return res;

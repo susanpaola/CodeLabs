@@ -7,9 +7,14 @@ import java.util.Vector;
 import negocio.entities.*;
 import persistencia.CursoPropioDAO;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class GestorConsultas {
 	
 	private static final String AND_FECHAFIN = "' AND fechaFin <='";
+	private static final Logger logger = LoggerFactory.getLogger(GestorConsultas.class);
+
 	
 	/**
 	 * 
@@ -28,7 +33,7 @@ public class GestorConsultas {
 		try {
 			vectorCursos = cursoDAO.seleccionarCursos(sql);
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error("Ocurrió una excepción: ", e);
 		}
 		
 		for (int i = 0; i < vectorCursos.size(); i++) {
@@ -47,7 +52,7 @@ public class GestorConsultas {
 			try {
 				vectorMatriculas = cursoDAO.seleccionarCursos(sql2);
 			} catch (Exception e) {
-				System.out.println(e);
+				logger.error("Ocurrió una excepción: ", e);
 			}
 			
 			String num_matriculas = vectorMatriculas.get(0).toString();
@@ -81,7 +86,7 @@ public class GestorConsultas {
 		try {
 			vectorCursos = cursoDAO.seleccionarCursos(sql);
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error("Ocurrió una excepción: ", e);
 		}
 		
 		for (int i = 0; i < vectorCursos.size(); i++) {
@@ -158,7 +163,7 @@ public class GestorConsultas {
 		try {
 			vectorCursos = cursoDAO.seleccionarCursos(sql);
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error("Ocurrió una excepción: ", e);
 		}
 		
 		for (int i = 0; i < vectorCursos.size(); i++) {
