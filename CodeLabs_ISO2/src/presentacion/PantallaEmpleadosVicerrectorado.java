@@ -48,7 +48,7 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 					PantallaEmpleadosVicerrectorado frame = new PantallaEmpleadosVicerrectorado();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -92,7 +92,7 @@ public class PantallaEmpleadosVicerrectorado extends JFrame {
 						}
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						//e1.printStackTrace();
 					}
 					
 					

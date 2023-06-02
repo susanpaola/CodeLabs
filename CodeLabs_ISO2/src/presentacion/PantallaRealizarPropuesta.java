@@ -101,7 +101,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 					PantallaRealizarPropuesta frame = new PantallaRealizarPropuesta();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -283,7 +283,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 			                GestorPropuestasCursos gestorCursos = new GestorPropuestasCursos();
 			                gestorCursos.realizarPropuestaCurso(curso);
 			            } catch (NumberFormatException e1) {
-			                e1.printStackTrace();
+			                //e1.printStackTrace();
 			            }
 
 			        }

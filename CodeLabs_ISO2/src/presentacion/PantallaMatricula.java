@@ -61,7 +61,7 @@ public class PantallaMatricula extends JFrame {
 					PantallaMatricula frame = new PantallaMatricula();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});

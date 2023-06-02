@@ -50,7 +50,7 @@ public class PantallaEstudiante extends JFrame {
 					PantallaEstudiante frame = new PantallaEstudiante();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -93,7 +93,7 @@ public class PantallaEstudiante extends JFrame {
 						}
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						//e1.printStackTrace();
 					}
 
 				}

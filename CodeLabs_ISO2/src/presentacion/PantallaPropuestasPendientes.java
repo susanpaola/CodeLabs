@@ -48,7 +48,7 @@ public class PantallaPropuestasPendientes extends JFrame {
 					PantallaPropuestasPendientes frame = new PantallaPropuestasPendientes();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});

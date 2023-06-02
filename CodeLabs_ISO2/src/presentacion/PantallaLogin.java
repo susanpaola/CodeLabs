@@ -245,7 +245,7 @@ public class PantallaLogin  {
 										 }
 										 
 									} catch (Exception e1) {
-										e1.printStackTrace();
+										//e1.printStackTrace();
 									}
 									
 						}
@@ -268,7 +268,7 @@ public class PantallaLogin  {
 				nombre=(nom.get(0).toString().replace("[", "").replace("]", "")+" "+apellidos.get(0).toString().replace("[", "").replace("]", ""));
 				return nombre;
 			} catch (Exception e1) {
-				e1.printStackTrace();
+				//e1.printStackTrace();
 			}
 			return "";
 }
@@ -282,7 +282,7 @@ public class PantallaLogin  {
 				
 				return tipo;
 			} catch (Exception e1) {
-				e1.printStackTrace();
+				//e1.printStackTrace();
 			}
 			return "";
 }

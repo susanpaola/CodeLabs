@@ -47,7 +47,7 @@ public class PantallaPropuestasResueltas extends JFrame {
 					PantallaPropuestasResueltas frame = new PantallaPropuestasResueltas();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
