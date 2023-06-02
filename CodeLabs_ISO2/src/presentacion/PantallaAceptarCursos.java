@@ -53,7 +53,7 @@ public class PantallaAceptarCursos extends JFrame {
 					PantallaAceptarCursos frame = new PantallaAceptarCursos();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -136,7 +136,7 @@ public class PantallaAceptarCursos extends JFrame {
             					listModel.remove(list.getSelectedIndex());
             					
             				} catch (Exception e1) {
-            					e1.printStackTrace();
+            					//e1.printStackTrace();
             				}
             			
             				
@@ -162,7 +162,7 @@ public class PantallaAceptarCursos extends JFrame {
             					
             					listModel.remove(list.getSelectedIndex());
             				} catch (Exception e1) {
-            					e1.printStackTrace();
+            					//e1.printStackTrace();
             				}
             				
             				}});
