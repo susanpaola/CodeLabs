@@ -49,7 +49,7 @@ public class PantallaDireccionCursos extends JFrame {
 					PantallaDireccionCursos frame = new PantallaDireccionCursos();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -91,7 +91,7 @@ public class PantallaDireccionCursos extends JFrame {
 						}
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						//e1.printStackTrace();
 					}
 
 				}
@@ -164,7 +164,7 @@ public class PantallaDireccionCursos extends JFrame {
 					}
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
-					e1.printStackTrace();
+					//e1.printStackTrace();
 				}
 
 			}
@@ -196,7 +196,7 @@ public class PantallaDireccionCursos extends JFrame {
 			
 			return tipo;
 		} catch (Exception e1) {
-			e1.printStackTrace();
+			//e1.printStackTrace();
 		}
 		return "";
 }
