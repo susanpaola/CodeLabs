@@ -72,13 +72,21 @@ A medida que hemos ido implementando el código, a lo largo del proyecto hemos v
     </dependencies>    
 
 ## Organización del proyecto
+### SCRUM
+Para nuestro proyecto hemos optado por una metodología agil, proporcionando un enfoque colaborativo y flexible para la planificación, ejecución y seguimiento de proyectos, centrandonos en la entrega de resultados de valor de manera iterativa e incremental.
+En Scrum, el trabajo lo dividimos en ciclos de tiempo llamados "sprints", Cada sprint tiene una duración de una a cuatro semanas. Al final de cada sprint, se revisan los resultados y se realizan ajustes en función de lo que hemos obtenido. 
 
-### Sprint 1
-### Sprint 2
-### Sprint 3
-### Sprint 4
-### Sprint 5
-### Sprint 6
+### Sprints
+1. Product backlog: lista ordenada de las características, funcionalidades, requisitos y mejoras que se espera que un proyecto contenga.
+2. Sprint backlog: lista de elementos del Product Backlog que el equipo de desarrollo se compromete a completar durante un sprint específico en la metodología ágil Scrum.
+3. Asignado: Asignación un miembro del grupo la realización de una tarea.
+4. In process: Tarea en proceso de realización.
+5. Completed: La terea esta terminada y completada. 
+
+#### Captura de sprints
+La misma estructura que se mostrará a continuación se a realizado para cada uno de los sprint que se han utilizado para este proyecto desde el sprint 1 hasta el sprint 7. Para ver los sprints de nuestro proyecto puede pinchar [aquí](https://github.com/users/susanpaola/projects/1/views/1).
+
+
 
 ## Base de Datos
 
