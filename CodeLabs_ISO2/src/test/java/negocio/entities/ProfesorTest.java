@@ -8,7 +8,7 @@ public class ProfesorTest {
     @Test
     public void testConstructorAndGetters() {
         
-        String dni = "123456789";
+        String dni = "12345678F";
         String nombre = "Peter";
         String apellidos = "Dash";
         boolean doctor = true;
@@ -33,13 +33,13 @@ public class ProfesorTest {
     @Test
     public void testSetters() {
         
-        Profesor profesor = new Profesor("123456789", "Peter", "Dash", true);
-        profesor.setDni("987654321");
+        Profesor profesor = new Profesor("12345678F", "Peter", "Dash", true);
+        profesor.setDni("98765432V");
         profesor.setNombre("Jane");
         profesor.setApellidos("Doe");
         profesor.setDoctor(false);
         
-        Assert.assertEquals("987654321", profesor.getDni());
+        Assert.assertEquals("98765432V", profesor.getDni());
         Assert.assertEquals("Jane", profesor.getNombre());
         Assert.assertEquals("Doe", profesor.getApellidos());
         Assert.assertFalse(profesor.isDoctor());

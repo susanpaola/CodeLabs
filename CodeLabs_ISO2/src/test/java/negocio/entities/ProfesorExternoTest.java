@@ -8,17 +8,17 @@ public class ProfesorExternoTest {
     @Test
     public void testGetTitulacion() {
       
-        ProfesorExterno profesorExterno = new ProfesorExterno("123456789", "Juan", "Pérez", true, "Universidad");
+        ProfesorExterno profesorExterno = new ProfesorExterno("12345678R", "Juan", "Pérez", true, "Ingeniero informatico");
         String titulacion = profesorExterno.getTitulacion();
-        Assert.assertEquals("Universidad", titulacion);
+        Assert.assertEquals("Ingeniero informatico", titulacion);
     }
 
     @Test
     public void testSetTitulacion() {
         
-        ProfesorExterno profesorExterno = new ProfesorExterno("987654321", "María", "López", false, "");
-        profesorExterno.setTitulacion("M.Sc");
-        Assert.assertEquals("M.Sc", profesorExterno.getTitulacion());
+        ProfesorExterno profesorExterno = new ProfesorExterno("98765432S", "María", "López", false, "");
+        profesorExterno.setTitulacion("Programador");
+        Assert.assertEquals("Programador", profesorExterno.getTitulacion());
     }
     
     
@@ -26,7 +26,7 @@ public class ProfesorExternoTest {
     @Test(expected = NullPointerException.class)
     public void testConjeturaError() {
    
-        ProfesorExterno profesorExterno = new ProfesorExterno("123456789", "Juan", "Pérez", true, null);
+        ProfesorExterno profesorExterno = new ProfesorExterno("12345678R", "Juan", "Pérez", true, null);
         String titulacion = profesorExterno.getTitulacion();
 
         
