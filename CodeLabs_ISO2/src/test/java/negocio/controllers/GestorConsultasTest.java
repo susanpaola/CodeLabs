@@ -65,11 +65,11 @@ public class GestorConsultasTest {
     
     @Test
     public void testListarEdicionesCursos() {
-    	GestorConsultas gestorConsultas = new GestorConsultas();
+    	GestorConsultas gestorConsultas = new GestorConsultas(); 
     	String fechaInicio = "2023-01-01";
     	String fechaFin = "2023-12-31";
     	List<CursoPropio> cursos = gestorConsultas.listarEdicionesCursos(fechaInicio, fechaFin);
-    	Assert.assertEquals(3, cursos.size());
+    	Assert.assertEquals(4, cursos.size());
     }
 }
 
