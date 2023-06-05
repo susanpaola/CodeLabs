@@ -143,6 +143,16 @@ En este apartado del proyecto hemos realizado el test de las respectivas clases 
 No hemos hecho testing de las interfaces (capa presentación) puesto que hemos visto que se producian errores, debido a que el usuario que llegue a interactuar con ello puede producir cambios que afecten. 
 
 ### Surefire y JaCoCo
+Para ejecutar el Maven y generar los informes hemos utilizado la siguiente estructura: | site:site | como resultado de la ejecución hemos obtenido el código html para el sitio del proyecto en la ruta target/site/ 
+Para conseguir generar los informes hemos necesitado el uso de las dependencias y plugins apropiados. Todas estas dependencias y plugins quedan definidas y plasmadas en el [pom.xml]( https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/pom.xml) del proyecto.
+En nuestro proyecto hemos hecho uso de Junit4, de tal forma que, al ejecutar las clases, estamos evaluando el funcionamiento deseado de cada uno de los métodos implementados. Para permitir que esto funcionase, tal y como hemos mencionado anteriormente hemos implementado sus plugins y dependencias específicas en pom.xml.
+Sin embargo, JaCoCo se encargará de evaluar la cobertura de las clases. A la hora de definir el porcentaje de cobertura mínima en nuestro archivo pom.xml de nuestro proyecto hemos establecido un 20% (0.20) de tal forma que esto no nos impida avanzar debido al lanzamiento de errores.
+Podemos ver un índice de la cobertura de nuestras clases por medio de JaCoCo en target/site/jacoco/index.html. A continuación, mostramos una captura de lo recientemente mencionado:
+
+IMAGEN
+A continuación, mostramos una captura de la estructura generada por la ejecución del pom.xml:
+IMAGEN
+
 
 ### Tablas de prueba
 Para realizar las tablas de prueba hemos decidido realizarlas de la capa de negocio mas precisamente de las entidades y de los Gestores en los controllers. Para poder ver las tablas solo hay que hacer click: [Tablas]()
