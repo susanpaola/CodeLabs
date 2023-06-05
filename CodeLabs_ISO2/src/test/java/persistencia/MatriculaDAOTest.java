@@ -16,7 +16,7 @@ public class MatriculaDAOTest {
     @Test
     public void testInsertMatricula() {
         try {
-            String sql = "INSERT INTO Matricula (id, tipoPago, titulo, estudiante, pagado, fecha) VALUES ('40', 'TRANSFERENCIA', '2', '', '1', '2023-05-18')";
+            String sql = "INSERT INTO Matricula (id, tipoPago, titulo, estudiante, pagado, fecha) VALUES ('40', 'TRANSFERENCIA', '2', '04258756F', '1', '2023-05-18')";
             int result = matriculaDAO.insertMatricula(sql);
             Assert.assertNotNull(result); 
             //Assert.assertEquals(1, result); // Verificar que se haya insertado una fila
