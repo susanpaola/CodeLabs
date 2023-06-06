@@ -101,30 +101,22 @@ La base de datos es una parte fundamental, en nuestro proyecto las filas y las c
 **Aquí van imagenes de las pantallas**
 
 ## Calidad
-La calidad según los apuntes de esta practica para este proyecto se realiza con el uso de la herramienta SonarCloud. 
+La calidad según los apuntes de esta practica para este proyecto se realiza con el uso de la herramienta [SonarCloud](https://sonarcloud.io/projects?sort=name). 
 Sonar ayuda a realizar un analisis del proyecto, de esta forma se pueden ver los fallos o aquellas cosas dentro del código que se pueden mejorar. En nuestro caso sonar hace un analisis del proyecto que se encuentra en la rama Develop. 
 
 Antes de realizar cualquier analisis es impresecindible conectar nuestro sonar al repositorio/proyecto que queremos analizar de allí hay que utilizar la dependencia que nos genera para poder realizar el analisis de forma correcta. 
 En nuestro proyecto en el pom.xml hemos implementado esa dependencia para poder ejecutar y realizar el análisis hemos utilizado | verify sonar:sonar |.
 
-<properties>  		
+| <properties>  		
 	<sonar.organization>susanpaola</sonar.organization>  		
 	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-	</properties>
+	</properties> |
  
- Una vez hecha la ejecucion y siendo Success, nos hemos dirigido al SonarCloud el cual nos mostraba una serie de errores: 
+ Una vez hecha la ejecución y siendo Success, nos hemos dirigido al SonarCloud el cual nos mostraba una serie de errores y nos hemos centrado en corregirlos: 
  - 5 Bugs
  - 438 Code smells
  - 23 Security Hotspots
- - 12.4% Duplicaciones
- 
- En primer lugar, nos pusimos manos a la obra con los Bugs que en este caso son los más importantes de resolver, hemos visto como uno a uno hasta llegar a 0 hemos podido solucionar. Algunos de ellos se debian a valores nulos o a falta de excepciones en el código, también se debian a conexiones o partes del código que habiamos dejado abiertas. 
- 
-Una vez terminamos con los bugs continuamos con los Security Hotspots los cuales eran unos cuantos, entre ellos podiamos encontrar vulnerabilidades en la contraseña de la base de datos y en también en funciones de depuración activadas (debug) que la utilizamos durante el desarrollo del proyecto para identificar y solucionar problemas. Para solucionarlo simplemente tuvimos que eliminar la función e.printStack() en nuestro caso hemos comentado la función ya que no debe estar habilitada en el código final, lo cual nos ha sido útil para fines de depuración pero no es apropiado en el código final. 
-
-Los Code smells que hemos encontrado han sido muchos pero le hemos dado prioridad a los criticos ya que de los bloquedos no había ninguno, pero críticos habian bastantes. Poco a poco hemos ido solucionandolos y hemos encontrado code smells debido a falta de default en los switch, constantes duplicadas en varias clases, falta de @Override, fallos en los que incluso hemos necesitado de añadir nuevas dependencias para su solucion. Tambien hemos resuelto code smells llamados "mayor" y los de "info" hasta llegar a reducir 398. 
-Una cosa que observamos es que mientras intentabamos solucionar algunos otros problemas aveces se nos generaban mas code smells y eso nos ha llevado bastante tiempo para resolver.
-También mientras solucionabas problemas observamos que las duplicaciones bajaron un poco. 
+ - 12.4% Duplicaciones 
 
 En este momento la covertura no es visible puesto que para ello es necesario implementar las clases test de las debidas clases main. Este paso lo hemos realizado mas adelante en la parte de testing. 
 
@@ -162,4 +154,18 @@ IMAGEN
 Para realizar el plan de pruebas hemos decidido realizarlas de la capa de negocio mas precisamente de las entidades, de algunos Gestores en los controllers y también de las DAO. Para poder ver las tablas solo hay que hacer click: [Tablas](https://docs.google.com/spreadsheets/d/1tOS7ewaHlQ4KxDNKUhrZLT5aKzZ_5R53/edit#gid=2096290695)
 
 ## Mantenimiento
+SonarCloud proporciona información valiosa sobre la calidad del código en un proyecto, lo cual es fundamental para el mantenimiento. Utilizando informes y métricas generados por Sonar para identificar problemas. 
+El mantenimiento puede incluir correcciones de errores, mejoras en el rendimiento, actualizaciones de seguridad, ajustes de funcionalidad y adaptaciones a cambios en los requisitos. Es necesario realizar un nuevo analisis en Sonar cada vez que se solucionan errores, esto ayudará al proyecto en su mantenimiento.
+En nuestro caso con Sonar En primer lugar, nos pusimos manos a la obra con los Bugs que en este caso son los más importantes de resolver, hemos visto como uno a uno hasta llegar a 0 hemos podido solucionar. Algunos de ellos se debian a valores nulos o a falta de excepciones en el código, también se debian a conexiones o partes del código que habiamos dejado abiertas. 
+ 
+Una vez terminamos con los bugs continuamos con los Security Hotspots los cuales eran unos cuantos, entre ellos podiamos encontrar vulnerabilidades en la contraseña de la base de datos y también en funciones de depuración activadas (debug) que las utilizamos durante el desarrollo del proyecto para identificar y solucionar problemas. Para solucionarlo simplemente tuvimos que eliminar la función e.printStack(), en nuestro caso hemos comentado la función ya que no debe estar habilitada en el código final, lo cual nos ha sido útil para fines de depuración pero no es apropiado en el código final. 
+
+Los Code smells que hemos encontrado han sido muchos pero le hemos dado prioridad a los criticos ya que de los bloquedos no había ninguno, pero críticos habian bastantes. Poco a poco hemos ido solucionandolos y hemos encontrado code smells debido a falta de default en los switch, constantes duplicadas en varias clases, falta de @Override, eliminación de algunos comentarios, fallos en los que incluso hemos necesitado añadir nuevas dependencias para su solución. Tambien hemos resuelto code smells llamados "mayor", "Menor" y los de "info" hasta llegar a reducir su número. 
+También mientras solucionabamos problemas observamos que las duplicaciones bajaron. 
+
+La grafica muestra la disminución de los code smells; aunque aveces, como se puede ver, corrigiendo las vulnerabilidades llegaron a incrementarse los code smells pero nos centramos en volver a disminuarlos.
+Vemos en las graficas como hemos conseguirdo dirminuar hasta 0 los Security Hotspots (vulnerabilidades).
+
+**Imagen gráfica Sonar**
+
 
