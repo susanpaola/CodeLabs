@@ -18,16 +18,16 @@ La fecha de entrega del proyecto final es el 07 de Junio
 
 ## Entorno GitHub y Eclipse
 ### Configuración
-El primer paso que hemos realizado para hacer este proyecto ha sido crear el entorno en GitHub con un nuevo repositorio al que hemos llamado CodeLabs en el configuraremos las claves necesarias, los token y los permisos. 
+El primer paso que hemos realizado para hacer este proyecto ha sido crear el entorno en GitHub con un nuevo repositorio al que hemos llamado CodeLabs, en el configuramos las claves necesarias, los token y los permisos. 
 También del archivo .vpp generamos el código base y lo llevamos a eclipse, una vez allí subimos el código a GitHub en el que comenzamos a implementar la funcionalidad del proyecto. 
 
 ### Ramas implementadas
 - [Feature-CapaNegocio](https://github.com/susanpaola/CodeLabs/tree/Feature-CapaNegocio)
 En esta rama se han realizado la modificacion de las entidades necesarias. Implementando sus getter, setter y constructores. 
 - [Feature-CapaNegocioControllers](https://github.com/susanpaola/CodeLabs/tree/Feature-CapaNegocioControllers)
-La creación de esta rama se ha utilizado para la añadir codigo a las clases de gestor consulta, gestor matriculación y gestor propuestas curso. 
+La creación de esta rama se ha utilizado para añadir codigo a las clases de gestor consulta, gestor matriculación y gestor propuestas curso. 
 - [Feature-CapaPresentacion](https://github.com/susanpaola/CodeLabs/tree/Feature-CapaPresentacion)
-En la rama de la capa de presentación hemos realizado la funcion de las interfaces del proyceto las cuales las veremos más adelante en el apartado de "Interfaz del proyceto".
+En la rama de la capa de presentación hemos realizado la funcion de las interfaces del proyecto, las cuales las veremos más adelante en el apartado de "Interfaz del proyecto".
 - [Feature-BBDD](https://github.com/susanpaola/CodeLabs/tree/Feature-BBDD)
 Aquí codificamos las clases relativas a la base de datos; es decir, las DAO las cuales nos ayudan a conectar con la base de datos y poder utilizar sus filas y sus columnas llamando a las clases necesarias para ello. 
 - [Develop](https://github.com/susanpaola/CodeLabs/tree/Develop)
@@ -36,7 +36,7 @@ En esta rama es donde residen la mayoría de los Merge y donde se unifican las a
 Por último en la rama testing lo primero que hemos hecho ha sido cambiar la estructura de los directorios teniendo ahora src/main y src/test, en src/test hemos creados los debidos paquetes de las clases que hemos hecho test. 
 
 ### Maven
-A medida que hemos ido implementando el código, a lo largo del proyecto hemos visto la necesidad de dependencias ya que han habido momentos en los que el codigo mostraba fallos en sus librerías, esto se ha debido a la falta de dependencias o plugins necesarios para la buena funcionalidad. 
+A medida que hemos ido implementando el código, a lo largo del proyecto hemos visto la necesidad de dependencias ya que han habido momentos en los que el codigo mostraba fallos en las librerías, esto se ha debido a la falta de dependencias o plugins necesarios para la buena funcionalidad. 
 
   <dependencies>
   
@@ -75,17 +75,17 @@ A medida que hemos ido implementando el código, a lo largo del proyecto hemos v
 ## Organización del proyecto
 ### SCRUM
 Para nuestro proyecto hemos optado por una metodología agil, proporcionando un enfoque colaborativo y flexible para la planificación, ejecución y seguimiento de proyectos, centrandonos en la entrega de resultados de valor de manera iterativa e incremental.
-En Scrum, el trabajo lo dividimos en ciclos de tiempo llamados "sprints", Cada sprint tiene una duración de una a cuatro semanas. Al final de cada sprint, se revisan los resultados y se realizan ajustes en función de lo que hemos obtenido. 
+En Scrum, el trabajo lo dividimos en ciclos de tiempo llamados "sprints", Cada sprint tiene una duración de una a tres semanas. Al final de cada sprint, se revisan los resultados y se realizan ajustes en función de lo que hemos obtenido. 
 
 ### Sprints
-1. Product backlog: lista ordenada de las características, funcionalidades, requisitos y mejoras que se espera que un proyecto contenga.
-2. Sprint backlog: lista de elementos del Product Backlog que el equipo de desarrollo se compromete a completar durante un sprint específico en la metodología ágil Scrum.
-3. Asignado: Asignación un miembro del grupo la realización de una tarea.
+1. Product backlog: lista ordenada de las características, funcionalidades, requisitos y mejoras que se espera que el proyecto contenga.
+2. Sprint backlog: lista de elementos del Product Backlog que el equipo de desarrollo a de completar durante un sprint específico en la metodología ágil Scrum.
+3. Asignado: Asignación a un miembro del grupo, la realización de una tarea.
 4. In process: Tarea en proceso de realización.
-5. Completed: La terea esta terminada y completada. 
+5. Completed: La tarea esta terminada y completada. 
 
 #### Captura de sprints
-La misma estructura que se mostrará a continuación se a realizado para cada uno de los sprint que se han utilizado para este proyecto desde el sprint 1 hasta el sprint 7. Para ver los sprints de nuestro proyecto puede pinchar [aquí](https://github.com/users/susanpaola/projects/1/views/1).
+La misma estructura que se mostrará a continuación, se a realizado para cada uno de los sprint que se han utilizado para este proyecto desde el sprint 1 hasta el sprint 7. Para ver los sprints de nuestro proyecto puede pinchar [aquí](https://github.com/users/susanpaola/projects/1/views/1).
 
 **Aquí va una imagen**
 
@@ -105,24 +105,28 @@ La calidad según los apuntes de esta practica para este proyecto se realiza con
 Sonar ayuda a realizar un analisis del proyecto, de esta forma se pueden ver los fallos o aquellas cosas dentro del código que se pueden mejorar. En nuestro caso sonar hace un analisis del proyecto que se encuentra en la rama Develop. 
 
 Antes de realizar cualquier analisis es impresecindible conectar nuestro sonar al repositorio/proyecto que queremos analizar de allí hay que utilizar la dependencia que nos genera para poder realizar el analisis de forma correcta. 
-En nuestro proyecto en el pomx.xml hemos implementado esa dependencia para poder ejecutar y realizar el análisis hemos utilizado verify sonar:sonar.
+En nuestro proyecto en el pom.xml hemos implementado esa dependencia para poder ejecutar y realizar el análisis hemos utilizado | verify sonar:sonar |.
 
-<properties>  		<sonar.organization>susanpaola</sonar.organization>  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+<properties>  		
+	<sonar.organization>susanpaola</sonar.organization>  		
+	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
  
- Una vez hecha la ejecucion y siendo Sussesful nos hemos dirigido al SonarCloud la cual nos mostraba una serie de errore: 
+ Una vez hecha la ejecucion y siendo Success, nos hemos dirigido al SonarCloud el cual nos mostraba una serie de errores: 
  - 5 Bugs
  - 438 Code smells
  - 23 Security Hotspots
  - 12.4% Duplicaciones
  
- En primer lugar nos pusimos manos a la obra con los Bugs que en este caso son los más importantes de resolver, hemos visto como uno a uno hasta llegar a 0 hemos podido solucionar. Algunos de ellos se debian a valores nulos o a falta de excepciones en el código, también se debian a conexiones o partes del código que habiamos dejado abiertas. 
+ En primer lugar, nos pusimos manos a la obra con los Bugs que en este caso son los más importantes de resolver, hemos visto como uno a uno hasta llegar a 0 hemos podido solucionar. Algunos de ellos se debian a valores nulos o a falta de excepciones en el código, también se debian a conexiones o partes del código que habiamos dejado abiertas. 
  
 Una vez terminamos con los bugs continuamos con los Security Hotspots los cuales eran unos cuantos, entre ellos podiamos encontrar vulnerabilidades en la contraseña de la base de datos y en también en funciones de depuración activadas (debug) que la utilizamos durante el desarrollo del proyecto para identificar y solucionar problemas. Para solucionarlo simplemente tuvimos que eliminar la función e.printStack() en nuestro caso hemos comentado la función ya que no debe estar habilitada en el código final, lo cual nos ha sido útil para fines de depuración pero no es apropiado en el código final. 
 
 Los Code smells que hemos encontrado han sido muchos pero le hemos dado prioridad a los criticos ya que de los bloquedos no había ninguno, pero críticos habian bastantes. Poco a poco hemos ido solucionandolos y hemos encontrado code smells debido a falta de default en los switch, constantes duplicadas en varias clases, falta de @Override, fallos en los que incluso hemos necesitado de añadir nuevas dependencias para su solucion. Tambien hemos resuelto code smells llamados "mayor" y los de "info" hasta llegar a reducir 398. 
 Una cosa que observamos es que mientras intentabamos solucionar algunos otros problemas aveces se nos generaban mas code smells y eso nos ha llevado bastante tiempo para resolver.
 También mientras solucionabas problemas observamos que las duplicaciones bajaron un poco. 
+
+En este momento la covertura no es visible puesto que para ello es necesario implementar las clases test de las debidas clases main. Este paso lo hemos realizado mas adelante en la parte de testing. 
 
 ¿Porqué es importante la calidad en nuestro proyecto y como podemos asegurarla?
 Es importante tener calidad en cada proyecto y en nuestro caso lo hemos intentado resolviendo poco a poco las advertencias en el análisis de Sonar. La calidad no es un estado sino un objetivo continuo. 
@@ -154,8 +158,8 @@ A continuación, mostramos una captura de la estructura generada por la ejecuci�
 IMAGEN
 
 
-### Tablas de prueba
-Para realizar las tablas de prueba hemos decidido realizarlas de la capa de negocio mas precisamente de las entidades y de los Gestores en los controllers. Para poder ver las tablas solo hay que hacer click: [Tablas](https://docs.google.com/spreadsheets/d/1tOS7ewaHlQ4KxDNKUhrZLT5aKzZ_5R53/edit#gid=2096290695)
+### Estratégia de prueba
+Para realizar el plan de pruebas hemos decidido realizarlas de la capa de negocio mas precisamente de las entidades, de algunos Gestores en los controllers y también de las DAO. Para poder ver las tablas solo hay que hacer click: [Tablas](https://docs.google.com/spreadsheets/d/1tOS7ewaHlQ4KxDNKUhrZLT5aKzZ_5R53/edit#gid=2096290695)
 
 ## Mantenimiento
 
