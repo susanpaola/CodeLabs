@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.EventQueue;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -46,7 +47,9 @@ public class PantallaLogin  {
 	protected static JTextField ContrasenaText;
 	protected static JTextField user;
 	
+	protected void setVisible(boolean b) {
 
+	}
 	private static void placeComponents(JPanel panel) {
 		panel.setLayout(null);
 	}

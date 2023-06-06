@@ -130,5 +130,4 @@ public class PantallaEstudiante extends JFrame {
 		lblTipoUsuario.setBounds(167, 149, 130, 13);
 		contentPane.add(lblTipoUsuario);
 	}
-
 }
