@@ -1,42 +1,69 @@
 package persistencia;
 
-import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
-import java.util.Vector;
 
 import negocio.entities.*;
 
-public class CursoPropioDAO{
-	
-	private GestorBD agenteBD;
-	
-	public CursoPropioDAO() {
-		try {
-			this.agenteBD = this.agenteBD.getAgente();
-		}catch (Exception e) {
-			System.out.println(e);
-		}
-	}
-	
-	//eliminar curso
-	public int eliminarCurso(String sql) throws SQLException, Exception {
-		return agenteBD.delete(sql);
+public class CursoPropioDAO extends AbstractEntityDAO {
+
+	/**
+	 * 
+	 * @param curso
+	 */
+	public int crearNuevoCurso(CursoPropio curso) {
+		// TODO - implement CursoPropioDAO.crearNuevoCurso
+		throw new UnsupportedOperationException();
 	}
 
-	//insertar curso
-	public int insertarCurso(String sql) throws Exception {
-		return agenteBD.insert(sql);
+	/**
+	 * 
+	 * @param curso
+	 */
+	public CursoPropio seleccionarCurso(CursoPropio curso) {
+		// TODO - implement CursoPropioDAO.seleccionarCurso
+		throw new UnsupportedOperationException();
 	}
-	
-	//editar curso
-	public int editarCurso(String sql) throws SQLException, Exception {
-		return agenteBD.update(sql);
+
+	/**
+	 * 
+	 * @param curso
+	 */
+	public CursoPropio editarCurso(CursoPropio curso) {
+		// TODO - implement CursoPropioDAO.editarCurso
+		throw new UnsupportedOperationException();
 	}
-	
-	//seleccionar curso
-	public Vector<Object> seleccionarCursos(String sql) throws Exception {
-		return agenteBD.select(sql);
+
+	/**
+	 * 
+	 * @param estado
+	 * @param fechaInicio
+	 * @param fechaFin
+	 */
+	public List<CursoPropio> listarCursosPorEstado(EstadoCurso estado, Date fechaInicio, Date fechaFin) {
+		// TODO - implement CursoPropioDAO.listarCursosPorEstado
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param tipo
+	 * @param fechaInicio
+	 * @param fechaFin
+	 */
+	public double listarIngresos(TipoCurso tipo, Date fechaInicio, Date fechaFin) {
+		// TODO - implement CursoPropioDAO.listarIngresos
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param fechaInicio
+	 * @param fechaFin
+	 */
+	public void listarEdicionesCursos(Date fechaInicio, Date fechaFin) {
+		// TODO - implement CursoPropioDAO.listarEdicionesCursos
+		throw new UnsupportedOperationException();
 	}
 
 }
