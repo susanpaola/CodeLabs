@@ -85,9 +85,28 @@ En Scrum, el trabajo lo dividimos en ciclos de tiempo llamados "sprints", Cada s
 5. Completed: La tarea esta terminada y completada. 
 
 #### Captura de sprints
-La misma estructura que se mostrará a continuación, se a realizado para cada uno de los sprint que se han utilizado para este proyecto desde el sprint 1 hasta el sprint 7. Para ver los sprints de nuestro proyecto puede pinchar [aquí](https://github.com/users/susanpaola/projects/1/views/1).
+Cada sprint tiene un conjunto de tareas, en total hemos realizado 6 sprint y al final de cada uno realizamos reuniones de cierre de sprint, en donde hemos acordado las próximas tareas del siguiente sprint. Para ver los sprints de nuestro proyecto puede pinchar [aquí](https://github.com/users/susanpaola/projects/1/views/1).
 
-**Aquí va una imagen**
+##### Sprint 1
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Sprint1.jpg">
+
+##### Sprint 2
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Sprint2.jpg">
+
+##### Sprint 3
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Sprint3.1.jpg">
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Sprint3.2.jpg">
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Sprint3.3.jpg">
+
+##### Sprint 4
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Sprint4.jpg">
+
+##### Sprint 5
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Sprint5.1.jpg">
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Sprint5.2.jpg">
+
+##### Sprint 6
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Sprint6.jpg">
 
 ## Base de Datos
 La base de datos es una parte fundamental, en nuestro proyecto las filas y las columnas han sido implementadas en la base de datos de [phpMyAdmin](https://www.db4free.net/phpMyAdmin/index.php?route=/database/structure&db=proyecto_iso)
@@ -98,7 +117,35 @@ La base de datos es una parte fundamental, en nuestro proyecto las filas y las c
 
 ## Interfaz del proyecto
 
-**Aquí van imagenes de las pantallas**
+La primera interacción con la interfaz del proyecto es realizar una conexión con la base de datos:
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Pantalla%20Conectar.jpg">
+
+### Interfaz del Estudiante
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Pantalla%20Login%20EStudiante.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Mensaje%20bienvenida.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Pantalla%20EstudiantehaceMatricula.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Cursos%20para%20matriculacion%20y%20pago.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Una%20vez%20hecho%20pago.jpg">
+
+### Interfaz del Vicerrector
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Login%20vicerrector.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Mensaje%20bienvenida.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/EvaluarProuestasDisponibles_Vicerrector.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Evaluar%20propuesta%20curso.jpg">
+
+### Interfaz del Profesor
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Login%20profesor.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Mensaje%20bienvenida.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Funciones%20del%20profesor.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Propuestas%20resueltas.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Funciones%20del%20profesor.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Realizar%20propuesta%20curso.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/fecha%20inicio%20propuesta.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/fecha%20fin%20propuesta.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Confimaci%C3%B3n%20de%20propuesta.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/propuesta%20enviada.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Funciones%20del%20profesor.jpg">
+<img width="450" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Propuestas%20pendientes.jpg">
 
 ## Calidad
 La calidad según los apuntes de esta practica para este proyecto se realiza con el uso de la herramienta [SonarCloud](https://sonarcloud.io/projects?sort=name). 
@@ -117,6 +164,8 @@ En nuestro proyecto en el pom.xml hemos implementado esa dependencia para poder 
  - 438 Code smells
  - 23 Security Hotspots
  - 12.4% Duplicaciones 
+
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Calidad1.jpg">
 
 En este momento la covertura no es visible puesto que para ello es necesario implementar las clases test de las debidas clases main. Este paso lo hemos realizado mas adelante en la parte de testing. 
 
@@ -142,13 +191,13 @@ No hemos hecho testing de las interfaces (capa presentación) puesto que hemos v
 Para ejecutar el Maven y generar los informes hemos utilizado la siguiente estructura: | site:site | como resultado de la ejecución hemos obtenido el código html para el sitio del proyecto en la ruta target/site/ 
 Para conseguir generar los informes hemos necesitado el uso de las dependencias y plugins apropiados. Todas estas dependencias y plugins quedan definidas y plasmadas en el [pom.xml]( https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/pom.xml) del proyecto.
 En nuestro proyecto hemos hecho uso de Junit4, de tal forma que, al ejecutar las clases, estamos evaluando el funcionamiento deseado de cada uno de los métodos implementados. Para permitir que esto funcionase, tal y como hemos mencionado anteriormente hemos implementado sus plugins y dependencias específicas en pom.xml.
+
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Coverage%20JUnit.jpg">
+
 Sin embargo, JaCoCo se encargará de evaluar la cobertura de las clases. A la hora de definir el porcentaje de cobertura mínima en nuestro archivo pom.xml de nuestro proyecto hemos establecido un 20% (0.20) de tal forma que esto no nos impida avanzar debido al lanzamiento de errores.
 Podemos ver un índice de la cobertura de nuestras clases por medio de JaCoCo en target/site/jacoco/index.html. A continuación, mostramos una captura de lo recientemente mencionado:
 
-IMAGEN
-A continuación, mostramos una captura de la estructura generada por la ejecución del pom.xml:
-IMAGEN
-
+<img width="950" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Surefire%20report.jpg">
 
 ### Estratégia de prueba
 Para realizar el plan de pruebas hemos decidido realizarlas de la capa de negocio mas precisamente de las entidades, de algunos Gestores en los controllers y también de las DAO. Para poder ver las tablas solo hay que hacer click: [Tablas](https://docs.google.com/spreadsheets/d/1tOS7ewaHlQ4KxDNKUhrZLT5aKzZ_5R53/edit#gid=2096290695)
@@ -166,6 +215,11 @@ También mientras solucionabamos problemas observamos que las duplicaciones baja
 La grafica muestra la disminución de los code smells; aunque aveces, como se puede ver, corrigiendo las vulnerabilidades llegaron a incrementarse los code smells pero nos centramos en volver a disminuarlos.
 Vemos en las graficas como hemos conseguirdo dirminuar hasta 0 los Security Hotspots (vulnerabilidades).
 
-**Imagen gráfica Sonar**
+<img width="550" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Grafica%20Sonar1.jpg">
+
+Grafica de todos los posibles fallos que ayudan al mantenimiento en Sonar.
+<img width="550" alt="image" src="https://github.com/susanpaola/CodeLabs/blob/Testing/CodeLabs_ISO2/imagenes/Grafica%20Sonar2.jpg">
+
+
 
 
