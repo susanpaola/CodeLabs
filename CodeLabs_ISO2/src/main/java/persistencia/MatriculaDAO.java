@@ -25,7 +25,7 @@ public class MatriculaDAO {
 	}
 	
 	public int deleteMatricula(String sql) throws Exception {
-		return agenteBD.delete(sql); 
+		return agenteBD.delete(sql);
 	}
 	
 	public int updateMatricula(String sql) throws SQLException, Exception {

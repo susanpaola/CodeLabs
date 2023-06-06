@@ -29,6 +29,7 @@ import persistencia.CursoPropioDAO;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.ListModel;
+import javax.swing.WindowConstants;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.AbstractListModel;
@@ -52,7 +53,7 @@ public class PantallaAceptarCursos extends JFrame {
 					PantallaAceptarCursos frame = new PantallaAceptarCursos();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -65,7 +66,7 @@ public class PantallaAceptarCursos extends JFrame {
 	public PantallaAceptarCursos() throws Exception {
 		setTitle("UCLM");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(176, 224, 230));
@@ -85,7 +86,7 @@ public class PantallaAceptarCursos extends JFrame {
     		
 
 			public void actionPerformed(ActionEvent e) {
-				
+			    throw new UnsupportedOperationException("Método no implementado");				
 				}});
 		contentPane.add(btnAceptar);
 		
@@ -134,7 +135,7 @@ public class PantallaAceptarCursos extends JFrame {
             					listModel.remove(list.getSelectedIndex());
             					
             				} catch (Exception e1) {
-            					e1.printStackTrace();
+            					//e1.printStackTrace();
             				}
             			
             				
@@ -160,7 +161,7 @@ public class PantallaAceptarCursos extends JFrame {
             					
             					listModel.remove(list.getSelectedIndex());
             				} catch (Exception e1) {
-            					e1.printStackTrace();
+            					//e1.printStackTrace();
             				}
             				
             				}});

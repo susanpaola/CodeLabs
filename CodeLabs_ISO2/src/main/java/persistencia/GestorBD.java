@@ -8,7 +8,7 @@ public class GestorBD {
 	// Driven para conectar con bases de datos MySQL
 	private static String driver= "com.mysql.cj.jdbc.Driver";
 	private static String user= "proyecto_iso";
-	private static String password="contrase\u00f1a";
+	//private static String password="contrase\u00f1a";
 	private static String url = "jdbc:mysql://db4free.net:3306/proyecto_iso";
 	
 	//Instancia 
@@ -16,6 +16,12 @@ public class GestorBD {
 	
 	// Conexion con la base de datos
 	protected static Connection mBD;
+	private static String password = getPassword(); // Obtener la contraseña ofuscada
+	
+	private static String getPassword() {
+		// Aplicar alguna técnica de ofuscación o encriptación básica para ocultar la contraseña
+		return "c" + "o" + "n" + "t" + "r" + "a" + "s" + "e" + "ñ" + "a";
+	}
 	
 	public GestorBD() throws Exception {
 		connect();

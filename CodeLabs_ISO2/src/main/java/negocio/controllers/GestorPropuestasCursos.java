@@ -5,7 +5,14 @@ import java.util.Vector;
 import negocio.entities.*;
 import persistencia.CursoPropioDAO;
 
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+
 public class GestorPropuestasCursos {
+	
+	//private static final Logger logger = LoggerFactory.getLogger(GestorConsultas.class);
+	private static final String WHERE_ID = "' WHERE id=";
+
 
 	public void realizarPropuestaCurso(CursoPropio curso) {
 		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
@@ -15,6 +22,7 @@ public class GestorPropuestasCursos {
 			agenteCursoPropioDAO.insertarCurso(sql);
 			
 		} catch (Exception e) {
+			//logger.error("Ocurrió una excepción: ", e);
 			System.out.println(e);
 		}
 	}
@@ -25,19 +33,23 @@ public class GestorPropuestasCursos {
 	 */
 	public void editarPropuestaCurso(CursoPropio curso, int tipo) {
 		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
-		if (tipo == 0) { //edita todo
+		if (tipo == 0) { 
 			try {
-				String sql = "UPDATE CursoPropio SET nombre='" + curso.getNombre() + "', ECTS=" + curso.getECTS() + ", fechaIni='" + curso.getFechaInicio() + "', fechaFin='" + curso.getFechaFin() + "', tasa=" + curso.getTasaMatricula() + ", edicion=" + curso.getEdicion() + ", centro='" + curso.getCentro() + "', director='" + curso.getDirector() + "', secretario='" + curso.getSecretario() + "', estado='" + curso.getEstadoCurso().toString() + "', tipo='" + curso.getTipoCurso().toString() + "' WHERE id=" + curso.getId();
+	            String sql = "UPDATE CursoPropio SET nombre='" + curso.getNombre() + "', ECTS=" + curso.getECTS() + ", fechaIni='" + curso.getFechaInicio() + "', fechaFin='" + curso.getFechaFin() + "', tasa=" + curso.getTasaMatricula() + ", edicion=" + curso.getEdicion() + ", centro='" + curso.getCentro() + "', director='" + curso.getDirector() + "', secretario='" + curso.getSecretario() + "', estado='" + curso.getEstadoCurso().toString() + "', tipo='" + curso.getTipoCurso().toString() + WHERE_ID + curso.getId();	   
+
 				agenteCursoPropioDAO.editarCurso(sql);
 			
 			} catch (Exception e) {
+				//logger.error("Ocurrió una excepción: ", e);
 				System.out.println(e);
 			}  	
-		} else { //edita sólo el curso
+		} else {
 			try {
-				String sql = "UPDATE CursoPropio SET estado='" + curso.getEstadoCurso().toString() + "' WHERE id=" + curso.getId();
+				String sql = "UPDATE CursoPropio SET estado='" + curso.getEstadoCurso().toString() +
+	                    WHERE_ID + curso.getId();
 				agenteCursoPropioDAO.editarCurso(sql);
 			} catch (Exception e) {
+				//logger.error("Ocurrió una excepción: ", e);
 				System.out.println(e);
 			} 
 		}
@@ -54,9 +66,10 @@ public class GestorPropuestasCursos {
 	        String sql = "SELECT estado FROM CursoPropio WHERE id=" + curso.getId();
 	        res = agenteCursoPropioDAO.seleccionarCursos(sql);
 	    } catch (Exception e) {
-	        System.out.println(e);
+	    	//logger.error("Ocurrió una excepción: ", e);
+	    	System.out.println(e);
 	    }
- 
+
 	    if (res != null && !res.isEmpty()) {
 	        String estado = res.get(0).toString();
 	        String charsToRemove = "[]";
@@ -84,6 +97,9 @@ public class GestorPropuestasCursos {
 	            case "TERMINADO":
 	                ec = EstadoCurso.TERMINADO;
 	                break;
+	            default:
+	                
+	                throw new IllegalArgumentException("Estado no reconocido: " + estado);
 	        }
 	        return ec;
 	    } else {
@@ -99,10 +115,12 @@ public class GestorPropuestasCursos {
 		CursoPropioDAO agenteCursoPropioDAO = new CursoPropioDAO();
 		
 		try {
-			String sql = "UPDATE CursoPropio SET estado='" + curso.getEstadoCurso().toString() + "' WHERE id=" + curso.getId();
+			String sql = "UPDATE CursoPropio SET estado='" + curso.getEstadoCurso().toString() +
+	                WHERE_ID + curso.getId();
 			agenteCursoPropioDAO.editarCurso(sql);
 			
 		} catch (Exception e) {
+			//logger.error("Ocurrió una excepción: ", e);
 			System.out.println(e);
 		}
 	}

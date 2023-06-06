@@ -14,6 +14,7 @@ import java.awt.event.FocusListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -48,6 +49,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.AbstractListModel;
 import javax.swing.ListSelectionModel;
+import javax.swing.WindowConstants;
 import javax.swing.JFormattedTextField.AbstractFormatter;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -57,6 +59,8 @@ import javax.swing.border.MatteBorder;
 import java.awt.Panel;
 
 public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
+	
+	private static final String MASTER_FORMACION_PERMANENTE = "Master de Formación Permanente";
 
 	protected JPanel contentPane;
 	protected JTextField NombreCurso;
@@ -83,7 +87,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 	protected JLabel lblDuracinDelCurso;
 	protected JComboBox comboBox;
 	presentacion.PantallaDireccionCursos p = new presentacion.PantallaDireccionCursos();
-	CursoPropio curso;
+	private transient CursoPropio curso;
 	private String tipoLetra= "Tahoma";
 	private String ERROR= "ERROR";
 
@@ -97,7 +101,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 					PantallaRealizarPropuesta frame = new PantallaRealizarPropuesta();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -112,7 +116,7 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 	public PantallaRealizarPropuesta() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
 		setTitle("UCLM\r\n");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 770, 618);
 		contentPane = new JPanel();
 		contentPane.setFont(new Font(tipoLetra, Font.BOLD, 15));
@@ -233,57 +237,59 @@ public class PantallaRealizarPropuesta extends JFrame implements FocusListener{
 		
 		btnFinalizar.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (datePickerFin.getJFormattedTextField().getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "Introduzca los campos necesarios.", ERROR, JOptionPane.ERROR_MESSAGE);
-				}
-				else {
-					
-				
-				int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea enviar su propuesta de curso?", "ATENCIÓN", JOptionPane.OK_CANCEL_OPTION);
-				if (respuesta == JOptionPane.OK_OPTION) {
-					JOptionPane.showMessageDialog(null, "Su propuesta ha sido enviada de manera correcta.", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+			    if (datePickerFin.getJFormattedTextField().getText().equals("")) {
+			        JOptionPane.showMessageDialog(null, "Introduzca los campos necesarios.", ERROR, JOptionPane.ERROR_MESSAGE);
+			    } else {
+			        int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea enviar su propuesta de curso?", "ATENCIÓN", JOptionPane.OK_CANCEL_OPTION);
+			        if (respuesta == JOptionPane.OK_OPTION) {
+			            JOptionPane.showMessageDialog(null, "Su propuesta ha sido enviada de manera correcta.", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
 
-					p.setVisible(true);
-					p.TipoUsuario.setText(CategoriaProf.getText());
-					p.NombreUsu.setText(NombreProf.getText());
-					setVisible(false);
-					try {
-						EstadoCurso estado= EstadoCurso.PROPUESTO;
-						TipoCurso tipo = null;
-						switch(c) {
-						case "Master de Formación Permanente":
-							tipo = TipoCurso.MASTER;
-							break;
-						case "Diploma de Experto":
-							tipo = TipoCurso.EXPERTO;
-							break;
-						case "Especialización":
-							tipo = TipoCurso.ESPECIALISTA;
-							break;
-						case "Curso de Formacion Avanzada":
-							tipo = TipoCurso.FORMACION_AVANZADA;
-							break;
-						case "Curso de Formacion Continua":
-							tipo = TipoCurso.FORMACION_CONTINUA;
-							break;
-						case "Microcredenciales":
-							tipo = TipoCurso.MICROCREDENCIALES;
-							break;
-						case "Actividades de Corta Duración":
-							tipo = TipoCurso.CORTA_DURACION;
-							break;
-					}
-						
-					curso = new CursoPropio(numRand(), NombreCurso.getText(), Integer.parseInt(NumCreditos.getText()), datePickerFin.getJFormattedTextField().getText(), datePickerFin.getJFormattedTextField().getText(), Double.parseDouble(textPrecio.getText()), Integer.parseInt(Edicion.getText()), Facultad.getText(), NombreProf.getText(), CategoriaProf.getText(), estado, tipo);
-					GestorPropuestasCursos gestorCursos = new GestorPropuestasCursos();
-					gestorCursos.realizarPropuestaCurso(curso);
-						 } catch (NumberFormatException e1) {
-						e1.printStackTrace();
-					}
-				
-				}
-				
-				}}
+			            p.setVisible(true);
+			            p.TipoUsuario.setText(CategoriaProf.getText());
+			            p.NombreUsu.setText(NombreProf.getText());
+			            setVisible(false);
+			            try {
+			                EstadoCurso estado = EstadoCurso.PROPUESTO;
+			                TipoCurso tipo = null;
+			                switch (c) {
+			                    case "Master de Formación Permanente":
+			                        tipo = TipoCurso.MASTER;
+			                        break;
+			                    case "Diploma de Experto":
+			                        tipo = TipoCurso.EXPERTO;
+			                        break;
+			                    case "Especialización":
+			                        tipo = TipoCurso.ESPECIALISTA;
+			                        break;
+			                    case "Curso de Formacion Avanzada":
+			                        tipo = TipoCurso.FORMACION_AVANZADA;
+			                        break;
+			                    case "Curso de Formacion Continua":
+			                        tipo = TipoCurso.FORMACION_CONTINUA;
+			                        break;
+			                    case "Microcredenciales":
+			                        tipo = TipoCurso.MICROCREDENCIALES;
+			                        break;
+			                    case "Actividades de Corta Duración":
+			                        tipo = TipoCurso.CORTA_DURACION;
+			                        break;
+			                    default:
+			                        // Bloque de código para el caso predeterminado (ningún caso coincide)
+			                        JOptionPane.showMessageDialog(null, "Opción no válida", "Error", JOptionPane.ERROR_MESSAGE);
+			                        break;
+			                }
+
+			                curso = new CursoPropio(numRand(), NombreCurso.getText(), Integer.parseInt(NumCreditos.getText()), datePickerFin.getJFormattedTextField().getText(), datePickerFin.getJFormattedTextField().getText(), Double.parseDouble(textPrecio.getText()), Integer.parseInt(Edicion.getText()), Facultad.getText(), NombreProf.getText(), CategoriaProf.getText(), estado, tipo);
+			                GestorPropuestasCursos gestorCursos = new GestorPropuestasCursos();
+			                gestorCursos.realizarPropuestaCurso(curso);
+			            } catch (NumberFormatException e1) {
+			                //e1.printStackTrace();
+			            }
+
+			        }
+
+			    }
+			}
 			
 		});
 		
@@ -512,6 +518,11 @@ mostrarFechas();
 
 	    	} 
 	    	break;
+	    default:
+	        // Bloque de código para el caso predeterminado (ningún caso coincide)
+	        // Puedes mostrar un mensaje de error o realizar alguna acción por defecto
+	        JOptionPane.showMessageDialog(null, "Opción no válida", "Error", JOptionPane.ERROR_MESSAGE);
+	        break;
 	  }
 		
 	}
@@ -531,8 +542,7 @@ mostrarFechas();
 	}
 	@Override
 	public void focusGained(FocusEvent e) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException("Método no implementado");		
 	}
 	@Override
 	public void focusLost(FocusEvent e) {
@@ -542,12 +552,11 @@ mostrarFechas();
 			textPrecio.setText(a);
 		}
 	
-		// TODO Auto-generated method stub
 		
 	}
 	public int numRand() {
-		int numero = (int)(Math.random()*100+1);
-		return numero;
+		SecureRandom secureRandom = new SecureRandom();
+        return secureRandom.nextInt(100) + 1;
 	}
 	public class DateLabelFormatter extends AbstractFormatter {
 

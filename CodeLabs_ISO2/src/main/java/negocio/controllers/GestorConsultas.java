@@ -7,8 +7,15 @@ import java.util.Vector;
 import negocio.entities.*;
 import persistencia.CursoPropioDAO;
 
-public class GestorConsultas {
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
+public class GestorConsultas {
+	
+	private static final String AND_FECHAFIN = "' AND fechaFin <='";
+	//private static final Logger logger = LoggerFactory.getLogger(GestorConsultas.class);
+
+	
 	/**
 	 * 
 	 * @param tipo
@@ -19,12 +26,14 @@ public class GestorConsultas {
 		double ganancia = 0.00;
 		String charsToRemove = "[] ";
 			
-		String sql = "SELECT * FROM CursoPropio WHERE tipo='" + tipo.toString() + "' AND fechaIni >='" + fechaInicio + "' AND fechaFin <='" + fechaFin + "' AND estado='VALIDADO'";
+		String sql = "SELECT * FROM CursoPropio WHERE tipo='" + tipo.toString() + "' AND fechaIni >='" + fechaInicio +
+	            AND_FECHAFIN + fechaFin + "' AND estado='VALIDADO'";
 		Vector<Object> vectorCursos = new Vector<Object>();
 		CursoPropioDAO cursoDAO = new CursoPropioDAO();
 		try {
 			vectorCursos = cursoDAO.seleccionarCursos(sql);
 		} catch (Exception e) {
+			//logger.error("Ocurrió una excepción: ", e);
 			System.out.println(e);
 		}
 		
@@ -70,7 +79,9 @@ public class GestorConsultas {
 	public List<CursoPropio> consultarEstadoCursos(EstadoCurso estado, String fechaInicio, String fechaFin) {
 		String charsToRemove = "[] ";
 		List<CursoPropio> listaEstadoCurso = new ArrayList<>();
-		String sql = "SELECT * FROM CursoPropio WHERE estado='" + estado.toString() + "' AND fechaIni >='" + fechaInicio + "' AND fechaFin <='" + fechaFin + "'";
+		 String sql = "SELECT * FROM CursoPropio WHERE estado='" + estado.toString() + "' AND fechaIni >='" + fechaInicio +
+		            AND_FECHAFIN + fechaFin + "'";	
+		 
 		Vector<Object> vectorCursos = new Vector<Object>();
 		CursoPropioDAO cursoDAO = new CursoPropioDAO();
 		try {
@@ -123,6 +134,10 @@ public class GestorConsultas {
 				case "CORTA_DURACION":
 					tipo = TipoCurso.CORTA_DURACION;
 					break;
+				default:
+			        // Manejar el caso por defecto, lanzar una excepción o asignar un valor predeterminado según sea necesario.
+			        // Por ejemplo, puedes lanzar una excepción:
+			        throw new IllegalArgumentException("Tipo de curso no reconocido: " + tipoCurso);
 			}
 			
 			CursoPropio cursoCreado = new CursoPropio(id, nombre, ECTS, fechaIni, fechaFinParts, tasa, edicion, centro, director, secretario, estado, tipo);
@@ -142,7 +157,9 @@ public class GestorConsultas {
 		CursoPropioDAO cursoDAO = new CursoPropioDAO();
 		
 		String charsToRemove = "[] ";
-		String sql = "SELECT * FROM CursoPropio WHERE fechaIni >='" + fechaInicio + "' AND fechaFin <='" + fechaFin + "'";
+		String sql = "SELECT * FROM CursoPropio WHERE fechaIni >='" + fechaInicio +
+	            AND_FECHAFIN + fechaFin + "'";
+		
 		Vector<Object> vectorCursos = new Vector<Object>();
 		try {
 			vectorCursos = cursoDAO.seleccionarCursos(sql);
@@ -192,6 +209,10 @@ public class GestorConsultas {
 				case "TERMINADO":
 					estado = EstadoCurso.TERMINADO;
 					break;
+				default:
+			        // Manejar el caso por defecto, lanzar una excepción o asignar un valor predeterminado según sea necesario.
+			        // Por ejemplo, puedes lanzar una excepción:
+			        throw new IllegalArgumentException("Estado de curso no reconocido: " + estadoCurso);
 			}
 			
 			TipoCurso tipo = null;
@@ -217,6 +238,10 @@ public class GestorConsultas {
 				case "CORTA_DURACION":
 					tipo = TipoCurso.CORTA_DURACION;
 					break;
+				default:
+			        // Manejar el caso por defecto, lanzar una excepción o asignar un valor predeterminado según sea necesario.
+			        // Por ejemplo, puedes lanzar una excepción:
+			        throw new IllegalArgumentException("Tipo de curso no reconocido: " + tipoCurso);	
 			}
 			
 			CursoPropio cursoCreado = new CursoPropio(id, nombre, ECTS, fechaIni, fechaFinParts, tasa, edicion, centro, director, secretario, estado, tipo);

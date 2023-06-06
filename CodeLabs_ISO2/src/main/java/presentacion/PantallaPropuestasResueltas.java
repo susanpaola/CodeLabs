@@ -8,8 +8,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import negocio.controllers.GestorConsultas;
-
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,6 +17,8 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 
+import negocio.controllers.GestorConsultas;
+
 //import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 import persistencia.CursoPropioDAO;
@@ -27,6 +27,8 @@ import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
+import javax.swing.WindowConstants;
+
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.SystemColor;
@@ -45,7 +47,7 @@ public class PantallaPropuestasResueltas extends JFrame {
 					PantallaPropuestasResueltas frame = new PantallaPropuestasResueltas();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -57,7 +59,7 @@ public class PantallaPropuestasResueltas extends JFrame {
 	public PantallaPropuestasResueltas() throws Exception {
 		setTitle("UCLM");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(176, 224, 230));

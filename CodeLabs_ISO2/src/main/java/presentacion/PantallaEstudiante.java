@@ -5,14 +5,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import negocio.controllers.GestorConsultas;
-
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
+import negocio.controllers.GestorConsultas;
 
 //import com.jgoodies.forms.factories.DefaultComponentFactory;
 
@@ -28,13 +27,16 @@ import java.util.Vector;
 import java.awt.Cursor;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 
 public class PantallaEstudiante extends JFrame {
+	
+	private static final String FONT_TAHOMA = "Tahoma";
 	
 	private JPanel contentPane;
 	protected final JTextField NombreUsu;
 	protected final JTextField TipoUsuario;
-	presentacion.PantallaLogin p = new presentacion.PantallaLogin();
+	private transient presentacion.PantallaLogin p = new presentacion.PantallaLogin();
 	private JLabel lblNewLabel;
 	private JLabel lblTipoUsuario;
 
@@ -48,7 +50,7 @@ public class PantallaEstudiante extends JFrame {
 					PantallaEstudiante frame = new PantallaEstudiante();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -59,7 +61,7 @@ public class PantallaEstudiante extends JFrame {
 	public PantallaEstudiante() {
 		setTitle("UCLM");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(176, 224, 230));
@@ -72,7 +74,7 @@ public class PantallaEstudiante extends JFrame {
 		btnMostrarPendientes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnMostrarPendientes.setForeground(new Color(0, 0, 0));
 		btnMostrarPendientes.setBackground(new Color(255, 182, 193));
-		btnMostrarPendientes.setFont(new Font("Tahoma", Font.BOLD, 19));
+		btnMostrarPendientes.setFont(new Font(FONT_TAHOMA, Font.BOLD, 19));
 		btnMostrarPendientes.setBounds(167, 281, 438, 99);
 		contentPane.add(btnMostrarPendientes);
 		btnMostrarPendientes.addActionListener((ActionListener) new ActionListener() {
@@ -90,8 +92,7 @@ public class PantallaEstudiante extends JFrame {
 							setVisible(false);
 						}
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						//e1.printStackTrace();
 					}
 
 				}
@@ -101,7 +102,7 @@ public class PantallaEstudiante extends JFrame {
 		NombreUsu.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		NombreUsu.setEditable(false);
 		NombreUsu.setHorizontalAlignment(SwingConstants.RIGHT);
-		NombreUsu.setFont(new Font("Tahoma", Font.BOLD, 15));
+		NombreUsu.setFont(new Font(FONT_TAHOMA, Font.BOLD, 15));
 		NombreUsu.setColumns(10);
 		NombreUsu.setBorder(null);
 		NombreUsu.setBackground(Color.WHITE);
@@ -112,7 +113,7 @@ public class PantallaEstudiante extends JFrame {
 		TipoUsuario = new JTextField();
 		TipoUsuario.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		TipoUsuario.setHorizontalAlignment(SwingConstants.RIGHT);
-		TipoUsuario.setFont(new Font("Tahoma", Font.BOLD, 15));
+		TipoUsuario.setFont(new Font(FONT_TAHOMA, Font.BOLD, 15));
 		TipoUsuario.setEditable(false);
 		TipoUsuario.setColumns(10);
 		TipoUsuario.setBorder(null);
@@ -121,13 +122,14 @@ public class PantallaEstudiante extends JFrame {
 		contentPane.add(TipoUsuario);
 		
 		lblNewLabel = new JLabel("Nombre Usuario:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel.setFont(new Font(FONT_TAHOMA, Font.PLAIN, 15));
 		lblNewLabel.setBounds(167, 107, 130, 13);
 		contentPane.add(lblNewLabel);
 		
 		lblTipoUsuario = new JLabel("Tipo Usuario:");
-		lblTipoUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblTipoUsuario.setFont(new Font(FONT_TAHOMA, Font.PLAIN, 15));
 		lblTipoUsuario.setBounds(167, 149, 130, 13);
 		contentPane.add(lblTipoUsuario);
 	}
+
 }

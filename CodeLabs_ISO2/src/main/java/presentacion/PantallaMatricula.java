@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.sql.Date;
@@ -21,6 +22,9 @@ import javax.swing.table.DefaultTableModel;
 
 import negocio.controllers.GestorConsultas;
 import negocio.controllers.GestorMatriculacion;
+
+//import com.jgoodies.forms.factories.DefaultComponentFactory;
+
 import negocio.entities.Matricula;
 import negocio.entities.ModoPago;
 import persistencia.GestorBD;
@@ -30,6 +34,7 @@ import persistencia.CursoPropioDAO;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.ListModel;
+import javax.swing.WindowConstants;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.AbstractListModel;
@@ -42,8 +47,8 @@ import java.awt.Cursor;
 public class PantallaMatricula extends JFrame {
 
 	private JPanel contentPane;
-	MatriculaDAO mDAO = new MatriculaDAO ();
-	CursoPropioDAO cDAO = new CursoPropioDAO ();
+	private transient MatriculaDAO mDAO = new MatriculaDAO();
+	private transient CursoPropioDAO cDAO = new CursoPropioDAO ();
 	presentacion.PantallaRealizarPropuesta p = new presentacion.PantallaRealizarPropuesta();
 
 	/**
@@ -56,7 +61,7 @@ public class PantallaMatricula extends JFrame {
 					PantallaMatricula frame = new PantallaMatricula();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -70,7 +75,7 @@ public class PantallaMatricula extends JFrame {
 	public PantallaMatricula() throws Exception {
 		setTitle("UCLM");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\34636\\git\\CodeLabs\\CodeLabs_ISO2\\imagenes\\logoUCLM.jpg"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 783, 520);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(176, 224, 230));
@@ -193,8 +198,8 @@ public class PantallaMatricula extends JFrame {
 	}
 	
 	public int numRand() {
-		int numero = (int)(Math.random()*100+1);
-		return numero;
+		SecureRandom secureRandom = new SecureRandom();
+        return secureRandom.nextInt(100) + 1;
 	}
 
 }
